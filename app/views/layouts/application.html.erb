@@ -7,8 +7,24 @@
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
+	<div class="container">
+	  <div class="sixteen columns">
+	    <div class="one-third column alpha">
+	      <div class="nav">
+	        <div class="logo">
+	          <a href="/" class="logo"><span style="font-weight:bold;">ONE</span>FORTY</a>
+	        </div>
+	        <div class="entryList">
+	        </div>
+	      </div>
+	    </div>
 
-		<%= yield %>
-
+	    <div class="two-thirds column omega">
+	      <div class="article">
+	      	<%= yield %>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 	</body>
 </html>
