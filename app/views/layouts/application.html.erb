@@ -5,15 +5,14 @@
 	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	  <%= csrf_meta_tags %>
+	  <%= render 'layouts/shim' %>
 	</head>
 	<body>
 	<div class="container">
 	  <div class="sixteen columns">
 	    <div class="one-third column alpha">
 	      <div class="nav">
-	        <div class="logo">
-	          <a href="/" class="logo"><span style="font-weight:bold;">ONE</span>FORTY</a>
-	        </div>
+	      	<%= render 'layouts/logo' %>
 	        <div class="entryList">
 	        </div>
 	      </div>
