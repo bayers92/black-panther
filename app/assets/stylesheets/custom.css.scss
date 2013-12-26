@@ -1,0 +1,114 @@
+@import "bootstrap";
+
+/* ------------- variables -------------- */
+
+$lightGray: #F3F3F3;
+$lightBlue: #87CEFA;
+
+
+/* ------------- universal -------------- */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+
+
+/* ------------- typography -------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* ------------- Custom Custom -------------- */
+.logo {
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+
+a.logo {
+	padding-top: 20px;
+	font-family: GillSans;
+	font-size: 32px;
+	color: $lightGray;
+	line-height: 21px;
+	text-decoration: none;
+	&:hover {
+	color: $lightBlue;
+	}
+}
+
+.entryList {
+	padding-left: 30px;
+}
+
+.entry {
+	padding-top: 20px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	border-bottom:thin solid #D8D8D8;
+}
+
+h1.entry-title {
+	font-family: GillSans-Bold;
+	font-size: 26px;
+	color: #D8D8D8;
+	line-height: 26px;
+	letter-spacing: 4px;
+	text-align: right;
+	margin-bottom: 0px;
+	text-transform:uppercase;
+}
+
+h2.entry-author {
+	font-family: GillSans;
+	font-size: 22px;
+	color: #D8D8D8;
+	line-height: 24px;
+	letter-spacing: 4px;
+	padding-top: 0px;
+	text-align: right;
+	text-transform:lowercase;
+	padding-bottom: 0px;
+}
+
+
+.article {
+}
+
