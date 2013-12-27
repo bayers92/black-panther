@@ -21,6 +21,7 @@
 	    <div class="two-thirds column omega">
 	      <div class="article">
 	      	<%= yield %>
+	      	<%= debug(params) if Rails.env.development? %>
 	      </div>
 	    </div>
 	  </div>
