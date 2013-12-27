@@ -9,25 +9,33 @@
 	</head>
 	<body>
 		<div class="container">
-		  <div class="sixteen columns">
-		    <div class="one-third column alpha">
-		      <div class="nav">
-		      	<%= render 'layouts/logo' %>
-		        <div class="entryList">
-		        </div>
-		      </div>
-		    </div>
+		  	<div class="sixteen columns">
+			    <div class="one-third column alpha">
+			      	<div class="nav">
+			      		<%= render 'layouts/logo' %>
+			        	<div class="entryList">
+			        	</div>
+			      	</div>
+			    </div>
 
-		    <div class="two-thirds column omega">
-		      <div class="article">
-		      	<% flash.each do |key, value| %>
-        			<div class="alert alert-<%= key %>"><%= value %></div>
-      			<% end %>
-		      	<%= yield %>
-		      	<%= debug(params) if Rails.env.development? %>
-		      </div>
-		    </div>
-		  </div>
+			    <div class="two-thirds column omega">
+				    <div class="article">
+
+				      	<% flash.each do |key, value| %>
+		        			<div class="alert alert-<%= key %>"><%= value %></div>
+		      			<% end %>
+
+
+				      	<%= yield %>
+
+				      	<%= debug(params) if Rails.env.development? %>
+				    </div>
+			    </div>
+		 	</div>
+
+		 	<div class="footer">
+			</div>	
+
 		</div>
 	</body>
 </html>
