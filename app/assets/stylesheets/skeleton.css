@@ -100,7 +100,7 @@
         .container .thirteen.columns                { width: 604px; }
         .container .fourteen.columns                { width: 652px; }
         .container .fifteen.columns                 { width: 700px; }
-        .container .sixteen.columns                 { width: 100%; padding-bottom: 100px;}
+        .container .sixteen.columns                 { width: 100%; padding-bottom: 50px;}
 
         .container .one-third.column                { width: 236px; }
         .container .two-thirds.column               { width: 492px; }
