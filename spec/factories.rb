@@ -15,4 +15,11 @@ FactoryGirl.define do
     	author true
     end
   end
+
+  factory :micropost do
+    title "This & That"
+    subtitle "Everything about life"
+    content "Lorem ipsum"
+    user
+  end
 end

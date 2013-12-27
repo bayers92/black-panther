@@ -33,5 +33,13 @@ namespace :db do
                    password_confirmation: password,
                    title: title, company: company)
     end
+    
+    users = User.all(limit: 6)
+    50.times do
+      content = Faker::Lorem.sentence(5)
+      title = "This & That"
+      subtitle = "Wordly Wisdom"
+      users.each { |user| user.microposts.create!(content: content, title: title, subtitle: subtitle) }
+    end
   end
 end
