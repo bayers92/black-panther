@@ -8,4 +8,8 @@ class Micropost < ActiveRecord::Base
     validates :subtitle, presence: true
 	validates :content, presence: true
 
+
+	def self.get_all_posts()
+	    post_ids = "SELECT id FROM microposts"
+  	end
 end

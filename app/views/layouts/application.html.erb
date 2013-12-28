@@ -14,6 +14,10 @@
 			      	<div class="nav">
 			      		<%= render 'layouts/logo' %>
 			        	<div class="entryList">
+			        		<% @entries = Micropost.all.paginate(page: params[:page]) %>
+			        		<%= render @entries %>
+			        		<%= will_paginate @entries %>
+
 			        	</div>
 			      	</div>
 			    </div>

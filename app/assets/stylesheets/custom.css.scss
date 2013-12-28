@@ -9,6 +9,7 @@ html,body {
 
 $lightGray: #F3F3F3;
 $lightBlue: #87CEFA;
+$mediumGray: #D8D8D8;
 
 /* ------------- mixins, variables, etc. --*/
 
@@ -72,6 +73,10 @@ p {
 }
 
 /* ------------- Custom Custom -------------- */
+
+.nav {
+  margin-left: 30px;
+}
 .logo {
 	padding-top: 30px;
 	padding-bottom: 50px;
@@ -90,37 +95,35 @@ a.logo {
 }
 
 .entryList {
-	padding-left: 30px;
 }
 
-.entry {
+a.entry {
 	padding-top: 20px;
-	padding-bottom: 10px;
-	padding-left: 5px;
-	border-bottom:thin solid #D8D8D8;
+  color: $mediumGray;
+  &:hover {
+    color: $lightBlue;
+    text-decoration: none;
+  }
 }
 
-h1.entry-title {
-	font-family: GillSans-Bold;
+.entry_title {
+  padding-top: 20px;
 	font-size: 26px;
-	color: #D8D8D8;
 	line-height: 26px;
-	letter-spacing: 4px;
+	letter-spacing: 10px;
 	text-align: right;
 	margin-bottom: 0px;
-	text-transform:uppercase;
 }
 
-h2.entry-author {
-	font-family: GillSans;
-	font-size: 22px;
-	color: #D8D8D8;
-	line-height: 24px;
+.entry_author {
+	font-size: 18px;
 	letter-spacing: 4px;
 	padding-top: 0px;
 	text-align: right;
 	text-transform:lowercase;
-	padding-bottom: 0px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  border-bottom:thin solid $lightGray;
 }
 
 
