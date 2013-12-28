@@ -21,6 +21,8 @@ FactoryGirl.define do
     subtitle "Everything about life"
     content "Lorem ipsum"
     author "Franky Frank"
+    job "CEO"
+    company "nike"
     user
   end
 end

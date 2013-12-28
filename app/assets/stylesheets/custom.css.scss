@@ -10,6 +10,7 @@ html,body {
 $lightGray: #F3F3F3;
 $lightBlue: #87CEFA;
 $mediumGray: #D8D8D8;
+$darkGray: #707070;
 
 /* ------------- mixins, variables, etc. --*/
 
@@ -48,6 +49,10 @@ textarea {
 
 /* ------------- typography -------------- */
 
+html {
+  font-family: GillSans;
+}
+
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
@@ -72,18 +77,19 @@ p {
   line-height: 1.7em;
 }
 
-/* ------------- Custom Custom -------------- */
+/* ------------- Side Nav Bar -------------- */
 
 .nav {
   margin-left: 30px;
 }
+
 .logo {
-	padding-top: 30px;
-	padding-bottom: 50px;
+  padding-top: 70px;
+  padding-bottom: 30px;
+  padding-left: 10px;
 }
 
 a.logo {
-	padding-top: 20px;
 	font-family: GillSans;
 	font-size: 32px;
 	color: $lightGray;
@@ -127,8 +133,65 @@ a.entry {
 }
 
 
+/* ------------ MicroPost ------------- */
+
 .article {
+  margin-top: 125px;
 }
+
+.author_info{
+  text-align: right;
+  margin-right: 75px;
+  font-size: 18px;
+  color: $darkGray;
+}
+
+.author_name {
+  font-weight: bold;
+}
+
+.author_creds {
+  
+}
+
+.heading {
+  margin-top: 50px;
+}
+
+.article_title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.article_subtitle {
+  font-size: 22px;
+  padding-bottom: 15px;
+  border-bottom:thin solid $darkGray;
+  width: 65%;
+}
+
+.content{
+  margin-top: 15px;
+  margin-right: 70px;
+}
+
+.writing {
+  font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+  letter-spacing: .01rem;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.article_timestamp {
+  margin-top: 25px; 
+  color: $mediumGray;
+}
+
+
+/* ------------- Footer ---------------- */
 
 .footer {
   width:100%;
@@ -189,22 +252,6 @@ input {
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
-  }
-}
-.content {
-  display: block;
-}
-.timestamp {
-  color: $grayLight;
-}
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
   }
 }
 

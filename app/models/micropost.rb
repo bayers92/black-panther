@@ -8,4 +8,6 @@ class Micropost < ActiveRecord::Base
     validates :subtitle, presence: true
 	validates :content, presence: true
 	validates :author, presence: true
+	validates :company, presence: true
+	validates :job, presence: true
 end

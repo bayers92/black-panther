@@ -1,16 +1,23 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new post" %>
-  </div>
   <div class ="field">
   	<%= f.text_field :title, placeholder: "Title" %>
   </div>
    <div class ="field">
   	<%= f.text_field :subtitle, placeholder: "Subtitle" %>
   </div>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Compose new post" %>
+  </div>
+
   <div class ="field" style="display: none;">
     <%= f.text_field :author, :value => current_user.name %>
+  </div>
+  <div class ="field" style="display: none;">
+    <%= f.text_field :job, :value => current_user.title %>
+  </div>
+  <div class ="field" style="display: none;">
+    <%= f.text_field :company, :value => current_user.company %>
   </div>
 
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>

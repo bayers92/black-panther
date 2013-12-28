@@ -40,7 +40,9 @@ namespace :db do
       title = "This & That"
       subtitle = "Wordly Wisdom"
       author = "Franky Frank"
-      users.each { |user| user.microposts.create!(content: content, title: title, subtitle: subtitle, author: author) }
+      job = "CEO"
+      company = "Nike"
+      users.each { |user| user.microposts.create!(content: content, title: title, subtitle: subtitle, author: author, job: job, company: company) }
     end
   end
 end

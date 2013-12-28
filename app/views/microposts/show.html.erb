@@ -1,11 +1,28 @@
 <% provide(:title, @post) %>
 
-<%= link_to "Post", micropost_path %>
-<li>
-  <span class="title"><%= @post.title %></span>
-  <span class="subtitle"><%= @post.subtitle %></span>
-  <span class="content"><%= @post.content %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(@post.created_at) %> ago.
-  </span>
-</li>
+<div class = "article" >
+	<div class = "author_info">
+		<div class = "author_name">
+			<%= @post.author %>
+		</div>
+		<div class = "author_creds">
+			<%= @post.company %>, <%= @post.job %>
+		</div>
+	</div>
+	<div class = "heading">
+		<div class = "article_title">
+			<%= @post.title %>
+		</div>
+		<div class = "article_subtitle">
+			<%= @post.subtitle %>
+		</div>
+	</div>
+	<div class = "content">
+		<div class = "writing" >			
+			<%= @post.content %>
+		</div>
+		<div class = "article_timestamp">
+			Posted <%= time_ago_in_words(@post.created_at) %> ago.
+		</div>
+	</div>
+</div>
