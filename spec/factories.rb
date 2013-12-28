@@ -20,6 +20,7 @@ FactoryGirl.define do
     title "This & That"
     subtitle "Everything about life"
     content "Lorem ipsum"
+    author "Franky Frank"
     user
   end
 end

@@ -9,5 +9,9 @@
    <div class ="field">
   	<%= f.text_field :subtitle, placeholder: "Subtitle" %>
   </div>
+  <div class ="field" style="display: none;">
+    <%= f.text_field :author, :value => current_user.name %>
+  </div>
+
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>

@@ -39,7 +39,8 @@ namespace :db do
       content = Faker::Lorem.sentence(5)
       title = "This & That"
       subtitle = "Wordly Wisdom"
-      users.each { |user| user.microposts.create!(content: content, title: title, subtitle: subtitle) }
+      author = "Franky Frank"
+      users.each { |user| user.microposts.create!(content: content, title: title, subtitle: subtitle, author: author) }
     end
   end
 end
