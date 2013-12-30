@@ -97,10 +97,12 @@ a.logo {
 	text-decoration: none;
 	&:hover {
 	color: $lightBlue;
-	}
+	}  
 }
 
 .entryList {
+  height: 500px;
+  overflow: auto;
 }
 
 a.entry {
@@ -136,7 +138,9 @@ a.entry {
 /* ------------ MicroPost ------------- */
 
 .article {
-  margin-top: 125px;
+  margin-top: 62px;
+  height: 550px;
+  overflow: auto;
 }
 
 .author_info{
