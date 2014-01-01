@@ -13,13 +13,12 @@
 			    <div class="one-third column alpha">
 			      	<div class="nav">
 			      		<%= render 'layouts/logo' %>
-			        	<div class="entryList">
-			        		<% @entries = Micropost.all.paginate(page: params[:page]) %>
-			        		<%= render @entries %>
-			        		<%= will_paginate @entries %>
-
+			        	<div id="postswrapper">
+			        		<% @entries = Micropost.all.paginate(:page => params[:page], :per_page => 6) %>
+			        			<%= render @entries %>
 			        	</div>
 			      	</div>
+			      		<%= will_paginate @entries, :page_links => false %>
 			    </div>
 
 			    <div class="two-thirds column omega">
@@ -30,7 +29,7 @@
 		      			<% end %>
 
 				      	<%= yield %>
-
+				      	<%= @past_url %>
 				    </div>
 			    </div>
 		 	</div>
