@@ -136,13 +136,6 @@ a.entry {
   border-bottom:thin solid $lightGray;
 }
 
-.pagination {
-  height: 30px;
-  margin-top: -5px;
-  margin-bottom: 0px;
-  margin-left: 150px;
-}
-
 
 /* ------------ MicroPost ------------- */
 
@@ -353,25 +346,27 @@ input {
 
 /* ----------- pagination ------------*/
 
-.pagination {
-  text-align: right;
-  cursor: default; }
-  .pagination a, .pagination span {
-    padding: 0.2em 0.3em; }
-  .pagination .disabled {
-    color: #aaaaaa; }
-  .pagination .current {
-    font-style: normal;
-    font-weight: bold;
-    background-color: white;
-    display: inline-block;
-    width: 1.4em;
-    height: 1.4em;
-    line-height: 1.5;
-    border-style:none; 
-  }
-  .pagination a {
-    text-decoration: none;
-    color: black; }
-    .pagination a:hover, .pagination a:focus {
-      text-decoration: underline; }
+.pagination{
+  margin-top: 0px;
+  text-align: center;
+  margin-left: 15px;
+  font-size: 16px;
+  color: $mediumGray;
+}
+.pagination a{
+  text-decoration:none;
+  color:$mediumGray;
+}
+.pagination a:hover,.pagination a:active{
+  border:none;
+  color: $lightBlue; 
+  text-decoration: none;
+}
+.pagination span.current{
+  font-weight:bold;
+  color:#FFF;
+}
+.pagination span.disabled{
+  color: $lightGray;
+}
+
