@@ -350,3 +350,28 @@ input {
   @include box_sizing;
 }
 
+
+/* ----------- pagination ------------*/
+
+.pagination {
+  text-align: right;
+  cursor: default; }
+  .pagination a, .pagination span {
+    padding: 0.2em 0.3em; }
+  .pagination .disabled {
+    color: #aaaaaa; }
+  .pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background-color: white;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.5;
+    border-style:none; 
+  }
+  .pagination a {
+    text-decoration: none;
+    color: black; }
+    .pagination a:hover, .pagination a:focus {
+      text-decoration: underline; }
