@@ -10,6 +10,7 @@ html,body {
 $lightBlue: #87CEFA;
 
 $lightGray: #F3F3F3;
+$lightishGray: #E5E5E5;
 $mediumGray: #D8D8D8;
 $darkGray: #707070;
 
@@ -113,8 +114,6 @@ a.logo {
 }
 
 #postswrapper {
-  height: 500px;
-  overflow: auto;
 }
 
 a.entry {
@@ -382,15 +381,14 @@ input {
 /* ----------- pagination ------------*/
 
 .pagination{
-  margin-top: 0px;
-  text-align: center;
-  margin-left: 25px;
+  margin-top: 10px;
+  text-align: right;
   font-size: 16px;
   color: $mediumGray;
 }
 .pagination a{
   text-decoration:none;
-  color:$mediumGray;
+  color: $lightishGray;
 }
 .pagination a:hover,.pagination a:active{
   border:none;
