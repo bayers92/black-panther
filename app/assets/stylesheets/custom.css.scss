@@ -78,6 +78,16 @@ p {
   line-height: 1.7em;
 }
 
+.yield {
+  margin-top: 45px;
+  height: 552px;
+  overflow: auto;
+}
+
+.hero-unit {
+  background-color: white;
+}
+
 /* ------------- Side Nav Bar -------------- */
 
 .nav {
@@ -140,7 +150,6 @@ a.entry {
 /* ------------ MicroPost ------------- */
 
 .article {
-  margin-top: 30px;
   height: 552px;
   overflow: auto;
 }
@@ -229,16 +238,17 @@ a.entry {
 .profile {
   margin-left: 20px;
   .name {
-    font-size: 3em;
+    font-size: 1em;
     letter-spacing: -2px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     margin-top: 30px;
+    padding-bottom: 0px;
   }
   .creds {
-    font-size: 2em;
-    letter-spacing: -2px;
     margin-bottom: 50px;
-    margin-top: 30px;
+    margin-top: -20px;
+    padding-top: 0px;
+    font-weight: normal;
   }
   .edit {
     margin-top: -30px;
@@ -374,7 +384,7 @@ input {
 .pagination{
   margin-top: 0px;
   text-align: center;
-  margin-left: 15px;
+  margin-left: 25px;
   font-size: 16px;
   color: $mediumGray;
 }
