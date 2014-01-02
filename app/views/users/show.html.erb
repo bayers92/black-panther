@@ -13,6 +13,9 @@
     <% end %>
   </div>
   <div class = "listings">
+    <div class ="heading">
+      Articles by this author ( <%= @microposts.count %>  total )
+    </div>
     <% if @user.microposts.any? %>
       <%= render partial: 'shared/micropost', collection: @microposts %>
     <% else %>
