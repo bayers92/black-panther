@@ -6,6 +6,11 @@
 	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	  <%= csrf_meta_tags %>
 	  <%= render 'layouts/shim' %>
+	<% if @past_url && @past_url.include?("?") %>
+		<% length = @past_url.size() %>
+		<% position = @past_url.index('?') %>
+		<% @ending = @past_url.slice(position..length) %>
+	<% end %>
 	</head>
 	<body>
 		<div class="container">
@@ -29,7 +34,7 @@
 		      			<% end %>
 
 				      	<%= yield %>
-				      	<%= @past_url %>
+
 				    </div>
 			    </div>
 		 	</div>

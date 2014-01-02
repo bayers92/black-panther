@@ -7,8 +7,9 @@ html,body {
 
 /* ------------- variables -------------- */
 
-$lightGray: #F3F3F3;
 $lightBlue: #87CEFA;
+
+$lightGray: #F3F3F3;
 $mediumGray: #D8D8D8;
 $darkGray: #707070;
 
@@ -211,8 +212,80 @@ a.entry {
   position: absolute;
   bottom:0;
   left:0;
-  background-color: black;
+  text-align: right;
+  color: $lightGray;
 }
+
+.footer{
+  a{
+    color: $mediumGray;
+    margin-right: 30px;
+  &:hover {
+    color: $lightBlue;
+    text-decoration: none;
+  }
+  }
+}
+
+.signin {
+  margin-right: 30px;
+}
+
+/* ------------ Profile Page ------------ */
+
+.profile {
+  .name {
+    text-align: center;
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .creds {
+    text-align: center;
+    font-size: 2em;
+    letter-spacing: -2px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+  }
+  .edit {
+    margin-top: -30px;
+    text-align:center;
+  }
+
+  .listings {
+    .post {
+      padding-bottom: 20px;
+      padding-top: 20px;
+      text-align: center;
+      border-bottom:thin solid $lightGray;
+      margin-left: 15%;
+      margin-right: 15%;
+      a.profile_post {
+        color: $darkGray;
+        .title {
+          font-size: 1.5em;
+          font-weight: bold;
+          margin-bottom: 2px;
+        }
+        .subtitle {
+          font-size: 1.2em;
+        }
+        &:hover {
+          color: $lightBlue !important;
+          text-decoration: none;
+        }
+        .date {
+          text-align: left;
+          font-size: 0.8em;
+          color: $mediumGray;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
 
 /* ------------ Users index ------------- */
 
