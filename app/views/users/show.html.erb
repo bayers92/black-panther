@@ -22,7 +22,13 @@
       <div class = "draftSide">
         <h4>
           <div class= "drafts">
-            Private Drafts (<%= @user.microposts.where(:publish => false).count %>)
+            <div class = "text">
+              Private Drafts (<%= @user.microposts.where(:publish => false).count %>)
+            </div>
+            <div class = "line">
+            </div>
+            <div class = "spacer">
+            </div>
             <div class = "draftList" >
               <% if @user.microposts.where(:publish => false).any? %>
                 <%= render partial: 'shared/micropost', collection: @microposts.where(:publish => false)  %>
@@ -36,7 +42,13 @@
       <div class = "publishedSide">
         <h4>
           <div class= "published">
-            Published Posts (<%= @user.microposts.where(:publish => true).count %>)
+            <div class = "text">
+              Published Posts (<%= @user.microposts.where(:publish => true).count %>)
+            </div>
+            <div class = "line">
+            </div>
+            <div class = "spacer">
+            </div>
             <div class = "publishedList" >
               <% if @user.microposts.where(:publish => true).any? %>
                 <%= render partial: 'shared/micropost', collection: @microposts.where(:publish => true)  %>

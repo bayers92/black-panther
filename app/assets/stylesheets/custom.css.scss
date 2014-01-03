@@ -189,6 +189,7 @@ a.entry {
   padding-bottom: 15px;
   border-bottom:thin solid $darkGray;
   width: 65%;
+  color: $darkGray;
 }
 
 .content{
@@ -334,14 +335,27 @@ a.entry {
       float: left;
       text-align: right;
       .drafts {
+        .text {
+        }
+        .line {
+          margin-top: 5px;
+          margin-bottom: -10px;
+          border-bottom:thin solid $lightGray;
+          float: right;
+          width: 40%;
+        }
+        .spacer {
+          float:right;
+          width: 60%;
+        }
+        color: $darkGray;
         .draftList {
           margin-top: 20px;
           font-weight: normal;
-          font-style: italic;
           .post {
             padding-bottom: 20px;
             a {
-              color: $mediumGray;
+              color: $darkGray;
               .title {
                 font-size: 1.2em;
               }
@@ -352,6 +366,7 @@ a.entry {
                 font-size: 0.8em;
                 font-weight: normal;
                 margin-left: 5px;
+                font-style: italic;
               }
               &:hover {
                 color: $lightBlue !important;
@@ -367,12 +382,24 @@ a.entry {
       margin-left: 5%;
       float: right;
       .published {
+        color: $mediumGray;
+        .line {
+          margin-top: 5px;
+          margin-bottom: -10px;
+          border-bottom:thin solid $lightGray;
+          float: left;
+          width: 50%;
+        }
+        .spacer {
+          float:right;
+          width: 50%;
+        }
         .publishedList {
           margin-top: 20px;
           .post {
             padding-bottom: 20px;
             a {
-              color: $mediumGray;
+              color: $lightishGray;
               .title {
                 font-size: 1.2em;
               }
@@ -383,6 +410,7 @@ a.entry {
                 font-size: 0.8em;
                 font-weight: normal;
                 margin-left: 5px;
+                font-style: italic;
               }
               &:hover {
                 color: $lightBlue !important;
