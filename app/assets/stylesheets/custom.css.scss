@@ -264,14 +264,16 @@ a.entry {
     padding-top: 0px;
     font-weight: normal;
   }
+  .apply {
+    padding-top: 100px;
+  }
 
   .listings {
     .heading {
       font-size: 1.2em;
-      padding-top: 20px;
-      padding-bottom: 15px;
       font-style:italic;
       color: $mediumGray;
+      margin-top: -20px;
     }
     .post {
       padding-bottom: 5px;
@@ -458,8 +460,18 @@ a.entry {
       text-decoration: none;
     }
   }
+}
+
+.admin {
   .delete {
-    color: red !important;
+    a{ 
+    color: red;
+    }
+  }
+  .author {
+    a{
+    }
+
   }
 }
 

@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }
   validates(:title, presence: true)
   validates(:company, presence: true)
+  validates_inclusion_of :author, :in => [true, false]
+  validates_inclusion_of :admin, :in => [true, false]
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64

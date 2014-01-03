@@ -8,11 +8,14 @@
 				<%= user.company %>, <%= user.title %>
 			</div>
 		</a>
-	<% if current_user && current_user.admin? && !current_user?(user) %>
-		<div class = "delete">
-		    <%= link_to "delete", user, method: :delete,
-	                                  data: { confirm: "You sure?" } %>
-	    </div>
-	<% end %>
+	</div>
+
+	<div class = "admin" >
+		<% if current_user && current_user.admin? && !current_user?(user) %>
+			<div class = "delete">
+			    <%= link_to "delete", user, method: :delete,
+		                                  data: { confirm: "You sure?" } %>
+		    </div>
+		<% end %>
 	</div>
 </li>

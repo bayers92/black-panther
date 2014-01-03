@@ -1,6 +1,56 @@
 <% provide(:title, @user.name) %>
+<% @past_url =  request.url %>
 
-<% if signed_in? && current_user?(@user) %>
+<% if signed_in? && current_user?(@user) && current_user.admin? %>
+  <div class = "profile">
+    <div class ="header" >
+      <div class = "edit">
+            <%= link_to "Account Settings", edit_user_path(current_user) %>
+      </div>
+      <div class = "info" >
+        <h1>
+          <div class = "name" >
+            <%= @user.name %>
+          </div>
+        </h1>
+        <h3> 
+          <span style="color:red">
+            Admin User
+          </span>
+        </h3>
+      </div>
+    </div>
+</div>
+<ul class="users">
+  <%= render User.all %>  
+</ul>
+
+<% elsif signed_in? && current_user?(@user) && !current_user.author? %>
+  <div class = "profile">
+    <div class ="header" >
+      <div class = "edit">
+            <%= link_to "Account Settings", edit_user_path(current_user) %>
+      </div>
+      <div class = "info" >
+        <h1>
+          <div class = "name" >
+            <%= @user.name %>
+          </div>
+        </h1>
+        <h3>
+          <%= @user.company %>, <%= @user.title %>
+        </h3>
+      </div>
+      <div class = "apply">
+        <h5>
+          Apply to be an author for One Forty <br /><br />
+          <a href="mailto:applications@oneforty.co?subject=I want to be an author on One Forty!" class="btn btn-success btn-large"><i class="icon-white icon-envelope"></i> Email Us</a>
+        </h5>
+      </div>
+  </div>
+</div>
+
+<% elsif signed_in? && current_user?(@user) && current_user.author? %>
   <div class = "profile">
     <div class ="header" >
       <div class = "edit">
@@ -62,8 +112,14 @@
     </div>
   </div>
 
+
 <% else %>
   <div class = "profile">
+    <% if signed_in? && current_user.admin? %>
+      <div class = "authorToggle"> 
+        
+      </div>
+    <% end %>
     <h1>
       <div class = "name" >
           <%= @user.name %>
@@ -76,7 +132,6 @@
     </h3>
     <div class = "listings">
       <div class ="heading">
-        Articles by this author ( <%= @microposts.where(:publish => true).count  %>  total )
       </div>
       <% if @user.microposts.any? %>
         <%= render partial: 'shared/micropost', collection: @microposts.where(:publish => true) %>

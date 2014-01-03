@@ -1,5 +1,6 @@
 class MicropostsController < ApplicationController
   before_action :signed_in_user, only: [:create, :destroy, :edit]
+  before_action :author_user,    only: [:create, :destroy, :edit]
 
   def index
     redirect_to root_url
@@ -57,5 +58,11 @@ class MicropostsController < ApplicationController
 
     def micropost_params
       params.require(:micropost).permit(:content, :title, :subtitle, :author, :job, :company, :publish)
+    end
+
+    # Before Filters
+
+    def author_user
+      redirect_to(root_url) unless current_user.author?
     end
 end

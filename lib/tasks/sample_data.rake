@@ -7,12 +7,14 @@ namespace :db do
                          password_confirmation: "monkeys",
                          admin: true,
                          title: "CEO",
-                         company: "Nike")
+                         company: "Nike",
+                         author: false)
     author = User.create!(name: "Author User",
                          email: "author@author.com",
                          password: "monkeys",
                          password_confirmation: "monkeys",
-                         admin: true,
+                         admin: false,
+                         author: true,
                          title: "CEO",
                          company: "Nike")
     User.create!(name: "Example User",
@@ -20,7 +22,9 @@ namespace :db do
                  password: "monkeys",
                  password_confirmation: "monkeys",
                  title: "CEO",
-                 company: "Nike")
+                 company: "Nike",
+                 admin: false,
+                 author: false)
     99.times do |n|
       name  = Faker::Name.name
       email = "example-#{n+1}@example.com"
@@ -31,7 +35,8 @@ namespace :db do
                    email: email,
                    password: password,
                    password_confirmation: password,
-                   title: title, company: company)
+                   title: title, company: company,
+                   admin: false, author: false)
     end
     
     users = User.all(limit: 6)
