@@ -296,18 +296,37 @@ a.entry {
 /* ----------- Author View -------------- */
 
 .profile {
+  .header {
+    height: 150px;
+    float: center;
+    text-align: center;
+    .info {
+      float: center;
+    }
+  }
   .edit {
-    margin-top: -40px;
+    a{
+      color: $mediumGray;
+      margin-top: -30px;
+      margin-right: 20px;
+      text-align: right;
+      float: right;
+      &:hover {
+        color: $lightBlue !important;
+        text-decoration: none;
+      }
+    }
   }
   .newPost {
-  margin-top: 40px;
   }
   .articleType {
     width: 100%;
     margin-top: 10px;
     .draftSide {
-      width: 50%;
+      width: 45%;
+      margin-right: 5%;
       float: left;
+      text-align: right;
       .drafts {
         .draftList {
           margin-top: 20px;
@@ -338,7 +357,8 @@ a.entry {
       }
     }
     .publishedSide {
-      width: 50%;
+      width: 45%;
+      margin-left: 5%;
       float: right;
       .published {
         .publishedList {

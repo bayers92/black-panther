@@ -2,21 +2,20 @@
 
 <% if signed_in? && current_user?(@user) %>
   <div class = "profile">
-    <h1>
-      <div class = "name" >
-        <%= @user.name %>
+    <div class ="header" >
+      <div class = "edit">
+            <%= link_to "Account Settings", edit_user_path(current_user) %>
       </div>
-    </h1>
-    <h3>
-      <div class = "creds">
-        <%= @user.company %>, <%= @user.title %>
+      <div class = "info" >
+        <h1>
+          <div class = "name" >
+            <%= @user.name %>
+          </div>
+        </h1>
       </div>
-    </h3>
-    <div class = "edit">
-        <%= link_to "Edit Profile", edit_user_path(current_user) %>
-    </div>
-    <div class = "newPost">
-      <a href="/microposts/new" class="btn btn-success"><i class="icon-white icon-star"></i> Start New Post</a>
+      <div class = "newPost">
+        <a href="/microposts/new" class="btn btn-success btn-large"><i class="icon-white icon-star-empty"></i> Create Post </a>
+      </div>
     </div>
 
     <div class = "articleType">
