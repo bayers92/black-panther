@@ -1,15 +1,16 @@
 <% provide(:title, @post.title) %>
 <% @past_url =  request.url %>
+<% @author = User.find_by id: @post.user_id %>
 
 <div class = "newPost" >
 	<div class = "author_info">
 		<div class = "author_name">
 			<a href="/users/<%= @post.user_id %><%= @ending %>">
-				<%= @post.author %>
+				<%= @author.name %>
 			</a>
 		</div>
 		<div class = "author_creds">
-			<%= @post.company %>, <%= @post.job %>
+			<%= @author.company %>, <%= @author.title %>
 		</div>
 	</div>
 	<div class = "heading">

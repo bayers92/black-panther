@@ -1,7 +1,11 @@
-
 <%= form_for(@micropost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 <div class = "newPost" >
+  <div class = "wordCount">
+    <p> Word Count:  
+      <input id="finalcount" value="0" disabled /> 
+    </p>
+  </div>
   <div class = "author_info">
     <div class = "author_name">
       <%= current_user.name %>
@@ -19,7 +23,7 @@
     </div>
   </div>
   <div class="newWriting" style="wrap: virtual; white-space: pre;">
-    <%= f.text_area :content, placeholder: "Once upon a time..." %>
+    <%= f.text_area :content, placeholder: "Once upon a time...", name: "writing" %>
   </div>
 </div>
 <div class = "other">
