@@ -26,6 +26,5 @@ module Oneforty
     # config.i18n.default_locale = :de
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     config.autoload_paths += %W(#{config.root}/lib)
-    I18n.enforce_available_locales = false
   end
 end
