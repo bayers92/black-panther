@@ -6,9 +6,10 @@
    <div class ="field">
   	<%= f.text_field :subtitle, placeholder: "Subtitle" %>
   </div>
-  <div class="field">
+  <div class="field" style="wrap: virtual; white-space: pre;">
     <%= f.text_area :content, placeholder: "Compose new post" %>
   </div>
+
 
   <div class ="field" style="display: none;">
     <%= f.text_field :author, :value => current_user.name %>

@@ -1,29 +1,43 @@
 <% provide(:title, @user.name) %>
 
-<div class = "profile">
-  <h1>
-    <div class = "name" >
+<% if signed_in? && current_user?(@user) %>
+  <div class = "profile">
+    <h1>
+      <div class = "name" >
         <%= @user.name %>
-    </div>
-  </h1>
-  <h3>
-    <div class = "creds">
+      </div>
+    </h1>
+    <h3>
+      <div class = "creds">
         <%= @user.company %>, <%= @user.title %>
+      </div>
+    </h3>
+    <div class = "edit">
+        <%= link_to "Edit Profile", edit_user_path(current_user) %>
     </div>
-  </h3>
-  <div class = "edit">
-    <% if signed_in? && current_user?(@user) %>
-      <%= link_to "Edit Profile", edit_user_path(current_user) %>
-    <% end %>
   </div>
-  <div class = "listings">
-    <div class ="heading">
-      Articles by this author ( <%= @microposts.count %>  total )
+
+<% else %>
+  <div class = "profile">
+    <h1>
+      <div class = "name" >
+          <%= @user.name %>
+      </div>
+    </h1>
+    <h3>
+      <div class = "creds">
+          <%= @user.company %>, <%= @user.title %>
+      </div>
+    </h3>
+    <div class = "listings">
+      <div class ="heading">
+        Articles by this author ( <%= @microposts.count %>  total )
+      </div>
+      <% if @user.microposts.any? %>
+        <%= render partial: 'shared/micropost', collection: @microposts %>
+      <% else %>
+        No articles written yet.
+      <% end %>
     </div>
-    <% if @user.microposts.any? %>
-      <%= render partial: 'shared/micropost', collection: @microposts %>
-    <% else %>
-      No articles written yet.
-    <% end %>
   </div>
-</div>
+<% end %>
