@@ -34,7 +34,7 @@
         Articles by this author ( <%= @microposts.count %>  total )
       </div>
       <% if @user.microposts.any? %>
-        <%= render partial: 'shared/micropost', collection: @microposts %>
+        <%= render partial: 'shared/micropost', collection: @microposts.where(:publish => true) %>
       <% else %>
         No articles written yet.
       <% end %>

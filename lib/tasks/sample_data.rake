@@ -42,7 +42,8 @@ namespace :db do
       author = "Franky Frank"
       job = "CEO"
       company = "Nike"
-      users.each { |user| user.microposts.create!(content: content, title: title, subtitle: subtitle, author: author, job: job, company: company) }
+      publish = true
+      users.each { |user| user.microposts.create!(content: content, title: title, subtitle: subtitle, author: author, job: job, company: company, publish: publish) }
     end
   end
 end

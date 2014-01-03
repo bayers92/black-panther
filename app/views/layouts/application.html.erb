@@ -19,7 +19,7 @@
 			      	<div class="nav">
 			      		<%= render 'layouts/logo' %>
 			        	<div id="postswrapper">
-			        		<% @entries = Micropost.all.paginate(:page => params[:page], :per_page => 6) %>
+			        		<% @entries = Micropost.where(:publish => true).paginate(:page => params[:page], :per_page => 6) %>
 			        			<%= render @entries %>
 			        	</div>
 			      	</div>
