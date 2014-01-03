@@ -79,7 +79,7 @@ p {
 
 .yield {
   margin-top: 45px;
-  height: 552px;
+  height: 575px;
   overflow: auto;
 }
 
@@ -91,7 +91,8 @@ p {
 
 .nav {
   margin-left: 30px;
-  margin-bottom: 0px;
+  height:630px;
+  overflow: auto;
 }
 
 .logo {
@@ -127,9 +128,10 @@ a.entry {
   padding-top: 20px;
 	font-size: 26px;
 	line-height: 26px;
-	letter-spacing: 10px;
+  letter-spacing:2px;
 	text-align: right;
 	margin-bottom: 0px;
+  overflow: hidden;
 }
 
 .entry_author {
@@ -147,7 +149,7 @@ a.entry {
 /* ------------ MicroPost ------------- */
 
 .article {
-  height: 552px;
+  height: 580px;
   overflow: auto;
 }
 
@@ -197,6 +199,7 @@ a.entry {
   line-height: 1.5;
   width: 100%;
   overflow: auto;
+  margin-top: -50px;
 }
 
 .article_timestamp {
@@ -249,10 +252,6 @@ a.entry {
     padding-top: 0px;
     font-weight: normal;
   }
-  .edit {
-    margin-top: -30px;
-    margin-bottom: -40px;
-  }
 
   .listings {
     .heading {
@@ -288,6 +287,83 @@ a.entry {
           font-size: 0.8em;
           color: $mediumGray;
           margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+/* ----------- Author View -------------- */
+
+.profile {
+  .edit {
+    margin-top: -40px;
+  }
+  .newPost {
+  margin-top: 40px;
+  }
+  .articleType {
+    width: 100%;
+    margin-top: 10px;
+    .draftSide {
+      width: 50%;
+      float: left;
+      .drafts {
+        .draftList {
+          margin-top: 20px;
+          font-weight: normal;
+          font-style: italic;
+          .post {
+            padding-bottom: 20px;
+            a {
+              color: $mediumGray;
+              .title {
+                font-size: 1.2em;
+              }
+              .subtitle {
+                display: none;
+              }
+              .date {
+                font-size: 0.8em;
+                font-weight: normal;
+                margin-left: 5px;
+              }
+              &:hover {
+                color: $lightBlue !important;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .publishedSide {
+      width: 50%;
+      float: right;
+      .published {
+        .publishedList {
+          margin-top: 20px;
+          .post {
+            padding-bottom: 20px;
+            a {
+              color: $mediumGray;
+              .title {
+                font-size: 1.2em;
+              }
+              .subtitle {
+                display: none;
+              }
+              .date {
+                font-size: 0.8em;
+                font-weight: normal;
+                margin-left: 5px;
+              }
+              &:hover {
+                color: $lightBlue !important;
+                text-decoration: none;
+              }
+            }
+          }
         }
       }
     }
@@ -352,7 +428,7 @@ input {
   @extend .error;
 }
 
-/* ---------- microposts -------------- */
+/* ---------- microposts nav entry -------------- */
 
 .microposts {
   list-style: none;
@@ -402,4 +478,95 @@ input {
 .pagination span.disabled{
   color: $lightGray;
 }
+
+
+/* ------------ New Post ------------*/
+
+.newPost {
+  overflow: hidden;
+  .articleTitle{
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    #micropost_title{
+      width: 366px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      border: none;
+      -webkit-box-shadow: none;
+      -webkit-transition: none;
+      transition: none;
+      padding: 0 0 0 0;
+      margin: 0 0 0 0;
+      -webkit-border-radius: 0px;
+      vertical-align: bottom;
+      color: #333333;
+    }
+  }
+  .articleSubtitle{
+      padding-bottom: 0px;
+      border-bottom: thin solid #707070;
+      width: 65%;
+    #micropost_subtitle {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 20px !important;
+      font-size: 22px;
+      padding-bottom: 15px;
+      border: none;
+      -webkit-box-shadow: none;
+      -webkit-transition: none;
+      transition: none;
+      padding: 0 0 0 0;
+      margin-bottom: 10px;
+      -webkit-border-radius: 0px;
+      vertical-align: bottom;
+      color: #333333;
+    }
+  }
+  .newWriting {
+    margin-top: 15px;
+    #micropost_content {
+      height: 350px;
+      margin: 0 0 0 0;
+      border: none;
+      padding: 0 0 0 0;
+      -webkit-box-shadow: none;
+      -webkit-transition: none;
+      -webkit-border-radius: 0px;
+      font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+      letter-spacing: .01rem;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 1.5;
+      overflow: auto;
+      color: #333333;
+      vertical-align: left;
+      margin-left: -10px;
+      margin-top: -30px;
+      padding-right: 70px;
+    }
+  }
+}
+.other {
+  margin-top: -10px;
+  text-align: right;
+  .radio1 {
+    float: left;
+    margin-left: 20px;
+    vertical-align: middle;
+  }
+  .radio2 {
+    float: left;
+    margin-left: 20px;
+  }
+  .btn.btn.btn-primary {
+    float: right;
+    margin-right: 20px;
+  }
+}
+
+
 

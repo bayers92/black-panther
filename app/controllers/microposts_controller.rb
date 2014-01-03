@@ -1,14 +1,13 @@
 class MicropostsController < ApplicationController
   before_action :signed_in_user, only: [:create, :destroy]
 
-
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
       flash[:success] = "Micropost created!"
       redirect_to root_url
     else
-      render 'static_pages/home'
+      render 'static_pages/error'
     end
   end
 
@@ -19,9 +18,13 @@ class MicropostsController < ApplicationController
     @post = Micropost.find(params[:id])
   end
 
+  def new
+    @micropost = Micropost.new
+  end
+
   private
 
     def micropost_params
-      params.require(:micropost).permit(:content, :title, :subtitle, :author, :job, :company)
+      params.require(:micropost).permit(:content, :title, :subtitle, :author, :job, :company, :publish)
     end
 end

@@ -15,6 +15,40 @@
     <div class = "edit">
         <%= link_to "Edit Profile", edit_user_path(current_user) %>
     </div>
+    <div class = "newPost">
+      <a href="/microposts/new" class="btn btn-success"><i class="icon-white icon-star"></i> Start New Post</a>
+    </div>
+
+    <div class = "articleType">
+      <div class = "draftSide">
+        <h4>
+          <div class= "drafts">
+            Private Drafts (<%= @user.microposts.where(:publish => false).count %>)
+            <div class = "draftList" >
+              <% if @user.microposts.where(:publish => false).any? %>
+                <%= render partial: 'shared/micropost', collection: @microposts.where(:publish => false)  %>
+              <% else %>
+                None yet
+              <% end %>
+            </div>
+          </div>
+        </h4>
+      </div>
+      <div class = "publishedSide">
+        <h4>
+          <div class= "published">
+            Published Posts (<%= @user.microposts.where(:publish => true).count %>)
+            <div class = "publishedList" >
+              <% if @user.microposts.where(:publish => true).any? %>
+                <%= render partial: 'shared/micropost', collection: @microposts.where(:publish => true)  %>
+              <% else %>
+                None yet
+              <% end %>
+            </div>
+          </div>
+        </h4>
+      </div>
+    </div>
   </div>
 
 <% else %>
@@ -31,7 +65,7 @@
     </h3>
     <div class = "listings">
       <div class ="heading">
-        Articles by this author ( <%= @microposts.count %>  total )
+        Articles by this author ( <%= @microposts.where(:publish => true).count  %>  total )
       </div>
       <% if @user.microposts.any? %>
         <%= render partial: 'shared/micropost', collection: @microposts.where(:publish => true) %>

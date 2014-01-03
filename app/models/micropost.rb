@@ -10,4 +10,5 @@ class Micropost < ActiveRecord::Base
 	validates :author, presence: true
 	validates :company, presence: true
 	validates :job, presence: true
+	validates_inclusion_of :publish, :in => [true, false]
 end

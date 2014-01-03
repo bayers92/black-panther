@@ -1,14 +1,35 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <div class ="field">
-  	<%= f.text_field :title, placeholder: "Title" %>
+<div class = "newPost" >
+  <div class = "author_info">
+    <div class = "author_name">
+      <%= current_user.name %>
+    </div>
+    <div class = "author_creds">
+      <%= current_user.company %>, <%= current_user.title %>
+    </div>
   </div>
-   <div class ="field">
-  	<%= f.text_field :subtitle, placeholder: "Subtitle" %>
+  <div class = "heading">
+    <div class = "articleTitle">
+      <%= f.text_field :title, placeholder: "Title" %>
+    </div>
+    <div class = "articleSubtitle">
+      <%= f.text_field :subtitle, placeholder: "Subtitle" %>
+    </div>
   </div>
-  <div class="field" style="wrap: virtual; white-space: pre;">
-    <%= f.text_area :content, placeholder: "Compose new post" %>
+  <div class="newWriting" style="wrap: virtual; white-space: pre;">
+    <%= f.text_area :content, placeholder: "Once upon a time..." %>
   </div>
+</div>
+<div class = "other">
+  <div class ="radio1">
+    <%= f.radio_button(:publish, :false, checked: true) %> Draft
+  </div>
+  <div class ="radio2">
+    <%= f.radio_button(:publish, :true) %> Publish
+  </div>
+
+
 
 
   <div class ="field" style="display: none;">
@@ -20,6 +41,8 @@
   <div class ="field" style="display: none;">
     <%= f.text_field :company, :value => current_user.company %>
   </div>
-
-  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+  <div class = "submit">
+    <%= f.submit "Save", class: "btn btn btn-primary" %>
+  </div>
+</div>
 <% end %>

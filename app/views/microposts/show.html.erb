@@ -1,7 +1,7 @@
 <% provide(:title, @post.title) %>
 <% @past_url =  request.url %>
 
-<div class = "article" >
+<div class = "newPost" >
 	<div class = "author_info">
 		<div class = "author_name">
 			<a href="/users/<%= @post.user_id %><%= @ending %>">
@@ -20,8 +20,8 @@
 			<%= @post.subtitle %>
 		</div>
 	</div>
-	<div class = "content">
-		<div class = "writing" style="white-space:pre;" >		
+	<div class = "content" style="white-space: pre-line;">
+		<div class = "writing" >		
 			<%= @post.content %>
 		</div>
 		<div class = "article_timestamp">
