@@ -3,15 +3,15 @@
 		<a href="/microposts/<%= micropost.id %><%= @ending %>" class="profile_post">
 		 	<div class="title"><%= micropost.title %></div>
 		 	<div class="subtitle"> <%= micropost.subtitle %></div>
-		 	<div class="date"> <%= micropost.created_at.strftime("%B %d, %Y") %></div> 
+		 	<div class="date"> <%= micropost.updated_at.strftime("%B %d, %Y") %></div> 
 		</a>
 	</div>
 <% else %>
 	<div class="post">
-		<a href="/microposts/<%= micropost.id %><%= @ending %>" class="profile_post">
+		<a href="/microposts/<%= micropost.id %>/edit<%= @ending %>" class="profile_post">
 		 	<div class="title"><%= micropost.title %></div>
 		 	<div class="subtitle"> <%= micropost.subtitle %></div>
-		 	<div class="date"> <%= micropost.created_at.strftime("%B %d, %Y") %></div> 
+		 	<div class="date"> <%= micropost.updated_at.strftime("%B %d, %Y") %></div> 
 		</a>
 	</div>
 <% end %>

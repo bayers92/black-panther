@@ -176,6 +176,11 @@ a.entry {
 
 .heading {
   margin-top: 50px;
+  .editPost{
+    font-size: 1.5em;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
 }
 
 .article_title {
@@ -452,6 +457,9 @@ a.entry {
       color: $lightBlue !important;
       text-decoration: none;
     }
+  }
+  .delete {
+    color: red !important;
   }
 }
 

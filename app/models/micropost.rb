@@ -1,6 +1,6 @@
 class Micropost < ActiveRecord::Base
 	belongs_to :user
-	default_scope -> { order('created_at DESC') }
+	default_scope -> { order('updated_at DESC') }
 	validates :user_id, presence: true
 	validates_length_of :content, maximum: 140, too_long: 'Your post must be less than 140 words.',
                       tokenizer: ->(str) { str.scan(/\w+/) }

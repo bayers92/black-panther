@@ -13,6 +13,16 @@
 		</div>
 	</div>
 	<div class = "heading">
+		<% if current_user && (current_user.id == @post.user_id) %>
+			<div class= "editPost" >
+				<a href="/microposts/<%= @post.id %>/edit<%= @ending %>" class="profile_post">
+					Edit
+				</a>
+				        |       
+				<%= link_to "Delete", @post, method: :delete,
+	                                  data: { confirm: "You sure?" } %>
+			</div>
+		<% end %>
 		<div class = "article_title">
 			<%= @post.title %>
 		</div>
@@ -25,7 +35,7 @@
 			<%= @post.content %>
 		</div>
 		<div class = "article_timestamp">
-			Posted on <%= @post.created_at.strftime("%B %d, %Y") %>
+			Posted on <%= @post.updated_at.strftime("%B %d, %Y") %>
 		</div>
 	</div>
 </div>

@@ -9,8 +9,10 @@
 			</div>
 		</a>
 	<% if current_user && current_user.admin? && !current_user?(user) %>
-	    <%= link_to "delete", user, method: :delete,
+		<div class = "delete">
+		    <%= link_to "delete", user, method: :delete,
 	                                  data: { confirm: "You sure?" } %>
+	    </div>
 	<% end %>
 	</div>
 </li>
