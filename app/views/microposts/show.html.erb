@@ -25,7 +25,7 @@
 			<%= @post.content %>
 		</div>
 		<div class = "article_timestamp">
-			Posted <%= time_ago_in_words(@post.created_at) %> ago.
+			Posted on <%= @post.created_at.strftime("%B %d, %Y") %>
 		</div>
 	</div>
 </div>
