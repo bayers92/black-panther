@@ -1,0 +1,25 @@
+<%= form_for(@comment) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class = "comment-box">
+    <%= f.text_area :content, placeholder: "What do you want to learn about?" %>
+  </div>
+    
+
+
+
+
+  <div class ="field" style="display: none;">
+    <%= f.text_field :author_id, :value => @user.id %>
+  </div>
+  <div class ="field" style="display: none;">
+    <%= f.text_field :user_id, :value => current_user.id %>
+  </div>
+  <div class ="field" style="display: none;">
+    <%= f.text_field :vote, :value => 1 %>
+  </div>
+  
+
+  <div class = "submit">
+    <%= f.submit "Save", class: "btn btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,4 +1,4 @@
-class MicropostsController < ApplicationController
+class CommentsController < ApplicationController
 	before_action :signed_in_user, only: [:create, :destroy]
 
 	def create
@@ -7,7 +7,7 @@ class MicropostsController < ApplicationController
 		  flash[:success] = "Suggestion posted!"
 		  redirect_to root_url
 		else
-		  render 'static_pages/home'
+		  render 'static_pages/error_posting_comment'
 		end
 	end
 
