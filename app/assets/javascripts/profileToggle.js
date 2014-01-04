@@ -1,10 +1,10 @@
 $(document).ready(function() {
-    $('a.btn-success').click(function() {
+    $('#articles').click(function() {
         $(".writtenArticles").show();
         $(".comments").hide();
         $(".suggest").hide();
     });
-    $('a.btn-info').click(function() {
+    $('#topics').click(function() {
         $(".writtenArticles").hide();
         $(".suggest").hide();
         $(".comments").show();

@@ -126,8 +126,15 @@
     </h3>
     <div class = "listings">
       <div class ="buttons">
-        <a href="javascript:;" class="btn btn-success">Articles</a>
-        <a href="javascript:;" class="btn btn-info">Topics</a>
+        <div class="switchContainer">
+          <div class="switch">
+            <input type="radio" class="switch-input" name="view" value="articles" id="articles" checked>
+            <label for="articles" class="switch-label switch-label-off">Articles</label>
+            <input type="radio" class="switch-input" name="view" value="topics" id="topics">
+            <label for="topics" class="switch-label switch-label-on">Topics</label>
+            <span class="switch-selection"></span>
+          </div>
+        </div>
         <div class = "suggestButton">
           <a href="javascript:;" class="btn btn-danger">Suggest a Topic</a>
         </div>
