@@ -8,7 +8,6 @@ html,body {
 /* ------------- variables -------------- */
 
 $lightBlue: #87CEFA;
-
 $lightGray: #F3F3F3;
 $lightishGray: #E5E5E5;
 $mediumGray: #D8D8D8;
@@ -52,7 +51,7 @@ textarea {
 /* ------------- typography -------------- */
 
 html {
-  font-family: GillSans;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -87,14 +86,85 @@ p {
   background-color: white;
 }
 
+
+
+/* ----------- forms -------------*/
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
+
+/* ----------- miscellaneous ----------*/
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+
+
+/* ------------- Footer ---------------- */
+
+.footer {
+  width:100%;
+  height:50px;
+  position: absolute;
+  bottom:0;
+  left:0;
+  text-align: right;
+  color: $lightGray;
+}
+
+.footer{
+  a{
+    color: $mediumGray;
+    margin-right: 30px;
+  &:hover {
+    color: $lightBlue;
+    text-decoration: none;
+  }
+  }
+}
+
+.signin {
+  margin-right: 30px;
+}
+
+
+/* ------------------------------------------------------------------------------- Side Bar ------- */
+
+
 /* ------------- Side Nav Bar -------------- */
 
 .nav {
   margin-left: 30px;
   height:630px;
   overflow: auto;
-  opacity:0.3;
-  filter:alpha(opacity=30); /* For IE8 and earlier */
+  opacity:0.4;
+  filter:alpha(opacity=40); /* For IE8 and earlier */
   &:hover {
     opacity:1.0;
     filter:alpha(opacity=100); /* For IE8 and earlier */
@@ -108,21 +178,21 @@ p {
 }
 
 a.logo {
-	font-family: GillSans;
-	font-size: 32px;
-	color: $lightGray;
-	line-height: 21px;
-	text-decoration: none;
-	&:hover {
-	color: $lightBlue;
-	}  
+  font-family: GillSans;
+  font-size: 32px;
+  color: $lightGray;
+  line-height: 21px;
+  text-decoration: none;
+  &:hover {
+  color: $lightBlue;
+  }  
 }
 
 #postswrapper {
 }
 
 a.entry {
-	padding-top: 20px;
+  padding-top: 20px;
   color: $mediumGray;
   &:hover {
     color: $lightBlue;
@@ -132,24 +202,55 @@ a.entry {
 
 .entry_title {
   padding-top: 20px;
-	font-size: 26px;
-	line-height: 26px;
+  font-size: 26px;
+  line-height: 26px;
   letter-spacing:2px;
-	text-align: right;
-	margin-bottom: 0px;
+  text-align: right;
+  margin-bottom: 0px;
   overflow: hidden;
 }
 
 .entry_author {
-	font-size: 18px;
-	letter-spacing: 4px;
-	padding-top: 0px;
-	text-align: right;
-	text-transform:lowercase;
+  font-size: 18px;
+  letter-spacing: 4px;
+  padding-top: 0px;
+  text-align: right;
+  text-transform:lowercase;
   padding-bottom: 10px;
   padding-left: 5px;
   border-bottom:thin solid $lightGray;
 }
+
+
+/* ----------- pagination ------------*/
+
+.pagination{
+  margin-top: 10px;
+  text-align: right;
+  font-size: 16px;
+  color: $lightishGray;
+}
+.pagination a{
+  text-decoration:none;
+  color: $mediumGray;
+}
+.pagination a:hover,.pagination a:active{
+  border:none;
+  color: $lightBlue; 
+  text-decoration: none;
+}
+.pagination span.current{
+  font-weight:bold;
+  color:#FFF;
+}
+.pagination span.disabled{
+  color: $lightGray;
+}
+
+
+
+
+/* ------------------------------------------------------------------------------- Post View ------- */
 
 
 /* ------------ MicroPost ------------- */
@@ -220,32 +321,10 @@ a.entry {
 }
 
 
-/* ------------- Footer ---------------- */
 
-.footer {
-  width:100%;
-  height:50px;
-  position: absolute;
-  bottom:0;
-  left:0;
-  text-align: right;
-  color: $lightGray;
-}
 
-.footer{
-  a{
-    color: $mediumGray;
-    margin-right: 30px;
-  &:hover {
-    color: $lightBlue;
-    text-decoration: none;
-  }
-  }
-}
+/* ------------------------------------------------------------------------------- Profile View ----- */
 
-.signin {
-  margin-right: 30px;
-}
 
 /* ------------ Profile Page ------------ */
 
@@ -338,6 +417,16 @@ a.entry {
     }
   }
 }
+
+/*----- Buttons ----- */
+
+
+
+
+
+
+/* ------------------------------------------------------------------------------- Author View ----- */
+
 
 /* ----------- Author View -------------- */
 
@@ -461,127 +550,6 @@ a.entry {
   }
 }
 
-
-/* ------------ Users index ------------- */
-
-.users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-top: 1px solid $grayLighter;
-    &:last-child {
-      border-bottom: 1px solid $grayLighter;
-    }
-  }
-}
-
-.authors {
-  a {
-    color: $darkGray;
-    .name{
-      font-weight: bold;
-    }
-    .creds {
-    }
-    &:hover {
-      color: $lightBlue !important;
-      text-decoration: none;
-    }
-  }
-}
-
-.admin {
-  .delete {
-    a{ 
-    color: red;
-    }
-  }
-  .author {
-    a{
-    }
-
-  }
-}
-
-
-/* ----------- forms -------------*/
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: auto !important;
-}
-
-#error_explanation {
-  color: #f00;
-  ul {
-    list-style: none;
-    margin: 0 0 18px 0;
-  }
-}
-
-.field_with_errors {
-  @extend .control-group;
-  @extend .error;
-}
-
-/* ---------- microposts nav entry -------------- */
-
-.microposts {
-  list-style: none;
-  margin: 10px 0 0 0;
-
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
-}
-
-
-
-
-/* ----------- miscellaneous ----------*/
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
-
-
-/* ----------- pagination ------------*/
-
-.pagination{
-  margin-top: 10px;
-  text-align: right;
-  font-size: 16px;
-  color: $lightishGray;
-}
-.pagination a{
-  text-decoration:none;
-  color: $mediumGray;
-}
-.pagination a:hover,.pagination a:active{
-  border:none;
-  color: $lightBlue; 
-  text-decoration: none;
-}
-.pagination span.current{
-  font-weight:bold;
-  color:#FFF;
-}
-.pagination span.disabled{
-  color: $lightGray;
-}
 
 
 /* ------------ New Post ------------*/
@@ -707,6 +675,63 @@ input {
     margin-right: 20px;
   }
 }
+
+
+
+
+
+
+/* ------------------------------------------------------------------------------- User Index ----- */
+
+
+/* ------------ Users index ------------- */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
+}
+
+.authors {
+  a {
+    color: $darkGray;
+    .name{
+      font-weight: bold;
+    }
+    .creds {
+    }
+    &:hover {
+      color: $lightBlue !important;
+      text-decoration: none;
+    }
+  }
+}
+
+.admin {
+  .delete {
+    a{ 
+    color: red;
+    }
+  }
+  .author {
+    a{
+    }
+
+  }
+}
+
+
+
+
+/* ------------------------------------------------------------------------------- Comments  ----- */
+
 
 .comment {
   font-size: 1.5em;
