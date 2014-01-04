@@ -330,18 +330,30 @@ a.entry {
 
 .profile {
   margin-left: 20px;
-  .name {
-    font-size: 1em;
-    letter-spacing: -2px;
-    margin-bottom: 0px;
-    margin-top: 30px;
-    padding-bottom: 0px;
-  }
-  .creds {
-    margin-bottom: 50px;
-    margin-top: -20px;
-    padding-top: 0px;
-    font-weight: normal;
+  margin-right: 30%;
+  .header {
+    .authorInfo {
+      float: left;
+      width: 50%;
+      text-align: left;
+      .name {
+        font-size: 1em;
+        letter-spacing: -2px;
+        margin-bottom: 0px;
+        margin-top: 30px;
+        padding-bottom: 0px;
+      }
+      .creds {
+        margin-bottom: 50px;
+        margin-top: -20px;
+        padding-top: 0px;
+        font-weight: normal;
+      }
+    }
+    .topicButton {
+      float: right;
+      margin-top: 20px;
+    }
   }
   .apply {
     padding-top: 100px;
@@ -349,14 +361,7 @@ a.entry {
 
   .listings {
     .buttons {
-      font-size: 1.2em;
-      font-style:italic;
-      color: $mediumGray;
-      padding-bottom: 30px;
-      .suggestButton {
-        float: right;
-        padding-right: 30%;
-      }
+      padding-bottom: 40px;
     }
     .writtenArticles {
       display: block;
@@ -389,7 +394,6 @@ a.entry {
       padding-bottom: 5px;
       padding-top: 25px;
       border-top:thin solid $lightGray;
-      width: 70%;
       a.profile_post {
         color: $darkGray;
         .title {
@@ -417,7 +421,7 @@ a.entry {
   }
 }
 
-/*----- Buttons ----- */
+/*----- Slider ----- */
 
 .switchContainer {
   width: 120px;
@@ -488,6 +492,29 @@ a.entry {
   -moz-transition: left 0.15s ease-out;
   -o-transition: left 0.15s ease-out;
   transition: left 0.15s ease-out;
+}
+
+
+/* ---------- Suggest Button ---------- */
+.butn {
+  font-style: normal;
+  background-color: white;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #c3e6fc;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  border: solid #c3e6fc 2px;
+  text-decoration: none;
+  text-shadow: 0 0 0 0;
+  &:hover {
+    border: solid #9fd7fb 2px;
+    text-decoration: none;
+    color: $lightBlue;
+    color: #9fd7fb;
+  }
 }
 
 

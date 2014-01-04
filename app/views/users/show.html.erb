@@ -114,16 +114,23 @@
 
 <% else %>
   <div class = "profile">
-    <h1>
-      <div class = "name" >
-          <%= @user.name %>
+    <div class = "header">
+      <div class = "authorInfo">
+        <h1>
+          <div class = "name" >
+              <%= @user.name %>
+          </div>
+        </h1>
+        <h3>
+          <div class = "creds">
+              <%= @user.company %>, <%= @user.title %>
+          </div>
+        </h3>
       </div>
-    </h1>
-    <h3>
-      <div class = "creds">
-          <%= @user.company %>, <%= @user.title %>
+      <div class = "topicButton">
+        <a href="javascript:;" class="butn">Suggest Topic</a>
       </div>
-    </h3>
+    </div>
     <div class = "listings">
       <div class ="buttons">
         <div class="switchContainer">
@@ -134,9 +141,6 @@
             <label for="topics" class="switch-label switch-label-on">Topics</label>
             <span class="switch-selection"></span>
           </div>
-        </div>
-        <div class = "suggestButton">
-          <a href="javascript:;" class="btn btn-danger">Suggest a Topic</a>
         </div>
       </div>
 

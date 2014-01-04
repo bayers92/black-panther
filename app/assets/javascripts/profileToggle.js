@@ -9,7 +9,7 @@ $(document).ready(function() {
         $(".suggest").hide();
         $(".comments").show();
     });
-    $('a.btn-danger').click(function() {
+    $('a.butn').click(function() {
         $(".writtenArticles").hide();
         $(".comments").hide();
         $(".suggest").show();
