@@ -392,7 +392,7 @@
         display: none;
       }
       .comments {
-        display: block;
+        display: none;
       }
       .comments.hide {
         display: none;
@@ -856,11 +856,14 @@
   .comment {
     font-size: 1.5em;
     font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     margin-left: 10px;
+    border-bottom:thin solid $lightGray;
+    color: $darkGray;
     .suggestion {
       float: left;
+      width: 80%;
     }
     .votes {
       font-weight: normal;
