@@ -180,6 +180,7 @@
 
   .nav {
     margin-left: 30px;
+    margin-bottom: 0px;
     overflow: auto;
     opacity:0.4;
     filter:alpha(opacity=40); /* For IE8 and earlier */
@@ -275,7 +276,6 @@
   /* ------------ MicroPost ------------- */
 
   .article {
-    height: 580px;
     overflow: auto;
   }
 
