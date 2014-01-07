@@ -25,6 +25,18 @@ class CommentsController < ApplicationController
 		@comment = Comment.find(params[:id])
 	end
 
+	def increase
+		@comment= Comment.find(params[:id])
+		@comment.update_attribute("vote", (@comment.vote + 1))
+	    if @comment.save
+	    	@user = User.find_by id: @comment.author_id
+			flash[:success] = "Thanks for voting!"
+			redirect_to user_url(@user)+ "?voted"
+		else
+			render 'static_pages/error_posting_comment'
+		end
+	end
+
 	private
 
 	def comment_params

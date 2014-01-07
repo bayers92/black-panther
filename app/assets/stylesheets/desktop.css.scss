@@ -97,8 +97,7 @@
 
   .yield {
     margin-top: 45px;
-    height: 575px;
-    overflow: auto;
+    overflow: inherit;
   }
 
   .hero-unit {
@@ -869,6 +868,12 @@
       font-weight: normal;
       font-style: italic;
       font-size: 0.8em;
+    }
+    .voteUp {
+      display: block;
+    }
+    .voteUp.hide {
+      display: none;
     }
   }
 }
