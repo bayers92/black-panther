@@ -1,8 +1,7 @@
-
 <div class="comment">
  	<div class="suggestion">"<%= comment.content %>"</div>
  	<div class="votes"> (<%= comment.vote %> vote)</div>
- 	<div class = "voteUp">
+ 	<div id = "voteUp_<%= comment.id %>" class = "voteUp">
 	 	<%= link_to image_tag("upArrow_gray.png", :border=>0), increase_path(:id => comment.id) %>
 	</div>
 </div>

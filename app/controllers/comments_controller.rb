@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
 	    if @comment.save
 	    	@user = User.find_by id: @comment.author_id
 			flash[:success] = "Thanks for voting!"
-			redirect_to user_url(@user)+ "?voted"
+			redirect_to user_url(@user)+ "?voted_#{@comment.id}"
 		else
 			render 'static_pages/error_posting_comment'
 		end
