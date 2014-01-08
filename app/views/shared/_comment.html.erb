@@ -1,7 +1,7 @@
 <div class="comment">
  	<div class="suggestion">"<%= comment.content %>"</div>
  	<div id = "voteUp_<%= comment.id %>" class = "voteUp">
-	 	<%= link_to image_tag("blank.png", :border=>0), increase_path(:id => comment.id) %>
+	 	<%= link_to " ", increase_path(:id => comment.id) %>
 	</div>
 	<div id = "voteUpEmpty_<%= comment.id %>" class = "voteUpEmpty" style = "display:none">
 	</div>
