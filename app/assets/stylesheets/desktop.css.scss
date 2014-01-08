@@ -870,33 +870,40 @@
       font-weight: normal;
       font-style: normal;
       font-size: 0.8em;
-      position: absolute;
-      right: 14%;
       text-align: center;
       margin-top: 10px;
+      z-index: -2;
+      float: right;
+      margin-right: -43px;
     }
     .voteUp {
       display: block;
       float: right;
       margin-top: -20px;
-      z-index: 10;
+      z-index: 0;
       position: relative;
       height: 45px;
       width: 45px;
-      background: url('/assets/upArrow_gray.png');
+      background-image: url('/assets/upArrow_gray.png');
       &:hover {
         display: block;
         float: right;
         margin-top: -20px;
-        z-index: 10;
+        z-index: 0;
         position: relative;
         height: 45px;
         width: 45px;
-        background: url('/assets/upArrow_blue.png');
+        background-image: url('/assets/upArrow_blue.png');
       }
     }
-    .voteUp.hide {
-      display: none;
+    .voteUpEmpty {
+      float: right;
+      margin-top: -20px;
+      z-index: 0;
+      position: relative;
+      height: 45px;
+      width: 45px;
+      background-image: url('/assets/blank.png');
     }
   }
 }
