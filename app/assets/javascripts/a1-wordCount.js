@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
     var wordCounts = {};
     $("textarea[id='micropost_content']").keyup(function() {
         var matches = this.value.match(/\b/g);
