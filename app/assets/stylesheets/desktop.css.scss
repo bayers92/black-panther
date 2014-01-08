@@ -856,21 +856,44 @@
     font-size: 1.5em;
     font-weight: bold;
     padding-top: 20px;
+    margin-bottom: 20px;
     padding-bottom: 20px;
     margin-left: 10px;
-    border-bottom:thin solid $lightGray;
+    border-top:thin solid $lightGray;
     color: $darkGray;
     .suggestion {
       float: left;
       width: 80%;
     }
     .votes {
+      width: 42px;
       font-weight: normal;
-      font-style: italic;
+      font-style: normal;
       font-size: 0.8em;
+      position: absolute;
+      right: 14%;
+      text-align: center;
+      margin-top: 10px;
     }
     .voteUp {
       display: block;
+      float: right;
+      margin-top: -20px;
+      z-index: 10;
+      position: relative;
+      height: 45px;
+      width: 45px;
+      background: url('/assets/upArrow_gray.png');
+      &:hover {
+        display: block;
+        float: right;
+        margin-top: -20px;
+        z-index: 10;
+        position: relative;
+        height: 45px;
+        width: 45px;
+        background: url('/assets/upArrow_blue.png');
+      }
     }
     .voteUp.hide {
       display: none;
