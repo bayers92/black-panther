@@ -880,7 +880,7 @@
       display: block;
       float: right;
       margin-top: -20px;
-      z-index: 0;
+      z-index: +1;
       position: relative;
       height: 45px;
       width: 45px;
@@ -889,7 +889,7 @@
         display: block;
         float: right;
         margin-top: -20px;
-        z-index: 0;
+        z-index: +1;
         position: relative;
         height: 45px;
         width: 45px;
