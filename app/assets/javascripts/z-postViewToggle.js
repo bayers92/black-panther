@@ -1,10 +1,12 @@
 $(document).ready(function() {
     $('#topicsView').click(function() {
         $(".top5").show();
-        $(".suggestTopicView").hide();
+        $(".suggest").hide();
+		window.location.hash = '#top5';
     });
     $('#suggestTopic').click(function() {
         $(".top5").hide();
-        $(".suggestTopicView").show();
+        $(".suggest").show();
+		window.location.hash = '#postFooter';
     });
 });

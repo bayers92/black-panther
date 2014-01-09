@@ -40,7 +40,7 @@
 		</div>
 	</div>
 
-	<div class = "postFooter">
+	<div class = "postFooter" id ="postFooter">
 	    <div class ="buttonsView">
 	        <div class="switchContainerView">
 	          <div class="switchView">
@@ -56,19 +56,19 @@
 	        </div>
 	    </div>
 	    <div class = "topicArea">
-		    <div class = "top5">
+		    <div class = "top5" id = "top5">
 		        <% author_comments = Comment.where(:author_id => @post.user_id).limit(5) %>
 		        <% if author_comments.any? %>
 		    		<%= render partial: 'shared/comment', collection: author_comments %>
 		    	<% end %>
 		    </div>
-		    <div class = "suggestTopicView">
-    	        <% if signed_in? %>
-
+	        <div class = "suggest">
+		        <% if signed_in? %>
+		            <%= render partial: 'shared/comment_form2' %>
 		        <% else %>
-		          Please login to submit topic suggestions!
+		        	Please login to submit topic suggestions!
 		        <% end %>  
-		    </div>
+	        </div>
 		</div>
 	</div>
 </div>
