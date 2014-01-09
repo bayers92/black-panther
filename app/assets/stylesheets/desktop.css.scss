@@ -335,7 +335,7 @@
 
   .article_timestamp {
     color: $mediumGray;
-    margin-top: -20px;
+    margin-top: -30px;
   }
 
 
@@ -948,7 +948,7 @@
 
   .comment {
     font-size: 1.5em;
-    font-weight: bold;
+    font-weight: normal;
     padding-top: 20px;
     margin-bottom: 20px;
     padding-bottom: 20px;
@@ -1007,6 +1007,26 @@
       height: 45px;
       width: 45px;
       background-image: url('/assets/upArrow_blue.png');
+    }
+  }
+
+  
+  /* ---------------- New Comment Form --------------------------- */
+  .comment-box {
+    #comment_content {  
+      border: none;
+      border-bottom:thin solid $lightGray;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      -webkit-transition: none;
+      -moz-transition: none;
+      -o-transition: none;
+      transition: none;
+      height: 35px;
+      font-size: 1.5em;
+      font-weight: normal;
+      color: $darkGray;
     }
   }
 }

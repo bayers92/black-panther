@@ -1,7 +1,7 @@
 <%= form_for(@comment) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class = "comment-box">
-    <%= f.text_area :content, placeholder: "What do you want to learn about?" %>
+    <%= f.text_area :content, placeholder: "What do you want to learn about? (15 word limit)" %>
   </div>
     
 
