@@ -60,6 +60,8 @@
 		        <% author_comments = Comment.where(:author_id => @post.user_id).limit(5) %>
 		        <% if author_comments.any? %>
 		    		<%= render partial: 'shared/comment', collection: author_comments %>
+		    	<% else %>
+		    		No topic suggestions yet.
 		    	<% end %>
 		    </div>
 	        <div class = "suggest">
