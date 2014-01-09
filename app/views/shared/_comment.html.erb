@@ -6,7 +6,7 @@
 	<div id = "voteUpEmpty_<%= comment.id %>" class = "voteUpEmpty" style = "display:none">
 	</div>
  	<div class="votes"> <%= comment.vote %> </div>
-	<% if current_user && (current_user.admin? || (current_user.id == comment.user_id)) %>
+	<% if current_user && (current_user.admin? || (current_user.id == comment.author_id) || (current_user.id == comment.user_id)) %>
 		<div class = "delete">
 		    <%= link_to "delete", comment, method: :delete,
 	                                  data: { confirm: "You sure?" } %>
