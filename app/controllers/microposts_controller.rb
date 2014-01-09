@@ -22,13 +22,13 @@ class MicropostsController < ApplicationController
   end
 
   def destroy
-    Micropost.find(params[:id]).destroy
+    Micropost.friendly.find(params[:id]).destroy
     flash[:success] = "Post destroyed."
     redirect_to root_url
   end
 
   def show
-    @post = Micropost.find(params[:id])
+    @post = Micropost.friendly.find(params[:id])
     @comment = current_user.comments.build if signed_in?
   end
 
@@ -37,11 +37,11 @@ class MicropostsController < ApplicationController
   end
 
   def edit
-    @micropost = Micropost.find(params[:id])
+    @micropost = Micropost.friendly.find(params[:id])
   end
 
   def update
-    @micropost = Micropost.find(params[:id])
+    @micropost = Micropost.friendly.find(params[:id])
     if @micropost.update_attributes(micropost_params)
       if @micropost.publish?
         flash[:success] = "Post Updated and Published!"

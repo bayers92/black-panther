@@ -1,7 +1,7 @@
 <% @author = User.find_by id: micropost.user_id %>
 
 <div class="entry">
-	<a href="/microposts/<%= micropost.id %><%= @ending %>" class="entry">
+	<a href="/microposts/<%= micropost.slug %><%= @ending %>" class="entry">
 	  <div class="entry_title"><%= micropost.title %></div>
 	  <div class="entry_author"><%= @author.name %></div>
 	</a>

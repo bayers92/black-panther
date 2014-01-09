@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
+    User.friendly.find(params[:id]).destroy
     flash[:success] = "User destroyed."
     redirect_to users_url
   end
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
     # Before filters
 
     def correct_user
-      @user = User.find(params[:id])
+      @user = User.friendly.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
 

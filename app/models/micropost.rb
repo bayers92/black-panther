@@ -1,4 +1,7 @@
 class Micropost < ActiveRecord::Base
+	extend FriendlyId
+  	friendly_id :title, use: :slugged
+
 	belongs_to :user
 	default_scope -> { order('updated_at DESC') }
 	validates :user_id, presence: true
@@ -11,4 +14,12 @@ class Micropost < ActiveRecord::Base
 	validates :company, presence: true
 	validates :job, presence: true
 	validates_inclusion_of :publish, :in => [true, false]
+
+	def to_param
+	  "#{title}".parameterize
+	end
+
+	def should_generate_new_friendly_id?
+		new_record?
+	end
 end

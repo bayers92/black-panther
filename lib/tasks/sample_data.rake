@@ -42,7 +42,7 @@ namespace :db do
     users = User.all(limit: 6)
     50.times do
       content = Faker::Lorem.sentence(5)
-      title = "This & That"
+      title = "This and That"
       subtitle = "Wordly Wisdom"
       author = "Franky Frank"
       job = "CEO"
