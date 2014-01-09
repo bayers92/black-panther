@@ -39,4 +39,36 @@
 			Posted on <%= @post.updated_at.strftime("%B %d, %Y") %>
 		</div>
 	</div>
+
+	<div class = "postFooter">
+	    <div class ="buttonsView">
+	        <div class="switchContainerView">
+	          <div class="switchView">
+	            <input type="radio" class="switch-input" name="view" value="topicsView" id="topicsView" checked>
+	            <label for="topicsView" class="switch-label switch-label-off">Top 5</label>
+	            <input type="radio" class="switch-input" name="view" value="suggestTopic" id="suggestTopic">
+	            <label for="suggestTopic" class="switch-label switch-label-on">Suggest</label>
+	            <span class="switch-selection"></span>
+	          </div>
+	        </div>
+	        <div class = "filler">
+	          <p></p>
+	        </div>
+	    </div>
+	    <div class = "topicArea">
+		    <div class = "top5">
+		        <% author_comments = Comment.where(:author_id => @post.user_id).limit(5) %>
+		        <% if author_comments.any? %>
+		    		<%= render partial: 'shared/comment', collection: author_comments %>
+		    	<% end %>
+		    </div>
+		    <div class = "suggestTopicView">
+    	        <% if signed_in? %>
+
+		        <% else %>
+		          Please login to submit topic suggestions!
+		        <% end %>  
+		    </div>
+		</div>
+	</div>
 </div>

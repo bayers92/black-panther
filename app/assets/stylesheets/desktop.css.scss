@@ -776,6 +776,100 @@
         padding-right: 70px;
       }
     }
+    .postFooter {
+      .buttonsView {
+        display: block;
+        padding-bottom: 40px;
+        .switchContainerView {
+          width: 120px;
+          float: left;
+        }
+
+        .filler {
+          width: 80%;
+        }
+
+        .switchView {
+          position: relative;
+          height: 30px;
+          float: left;
+          background: white;
+        }
+
+        .switch-label {
+          position: relative;
+          z-index: 2;
+          float: left;
+          width: 58px;
+          line-height: 26px;
+          font-size: 14px;
+          color: $darkGray;
+          text-align: center;
+          cursor: pointer;
+          font-style: normal;
+        }
+
+        .switch-label:active {
+          font-weight: bold;
+          font-style: normal;
+        }
+
+        .switch-label-off {
+          padding-left: 2px;
+        }
+
+        .switch-label-on {
+          padding-right: 2px;
+        }
+
+        .switch-input {
+          display: none;
+        }
+
+        .switch-input:checked + .switch-label {
+          font-weight: bold;
+          color: white;
+          -webkit-transition: 0.15s ease-out;
+          -moz-transition: 0.15s ease-out;
+          -o-transition: 0.15s ease-out;
+          transition: 0.15s ease-out;
+        }
+
+        .switch-input:checked + .switch-label-on ~ .switch-selection {
+          /* Note: left: 50% doesn't transition in WebKit */
+          left: 60px;
+        }
+
+        .switch-selection {
+          display: block;
+          position: absolute;
+          z-index: 1;
+          top: 2px;
+          left: 2px;
+          width: 58px;
+          height: 22px;
+          background: $lightBlue;
+          border-radius: 3px;
+          -webkit-transition: left 0.15s ease-out;
+          -moz-transition: left 0.15s ease-out;
+          -o-transition: left 0.15s ease-out;
+          transition: left 0.15s ease-out;
+        }
+      }
+      .topicArea {
+        .top5 {
+          opacity:0.2;
+          filter:alpha(opacity=20); /* For IE8 and earlier */
+          &:hover {
+            opacity:1.0;
+            filter:alpha(opacity=100); /* For IE8 and earlier */
+          }
+        }
+        .suggestTopicView{
+          display: none;
+        }
+      }
+    }
   }
   .other {
     margin-top: -10px;
