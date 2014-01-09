@@ -352,7 +352,7 @@
     .header {
       .authorInfo {
         float: left;
-        width: 50%;
+        width: 100%;
         text-align: left;
         .name {
           font-size: 1em;
@@ -369,8 +369,9 @@
         }
       }
       .topicButton {
-        float: right;
         margin-top: 20px;
+        width: 100%;
+        text-align: right;
       }
     }
     .apply {
@@ -379,7 +380,7 @@
 
     .listings {
       .buttons {
-        padding-bottom: 40px;
+        padding-bottom: 50px;
       }
       .writtenArticles {
         display: block;
