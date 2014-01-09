@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :history]
+
   has_many :microposts, dependent: :destroy
   has_many :comments, dependent: :destroy
   before_save { self.email = email.downcase }
@@ -21,6 +24,14 @@ class User < ActiveRecord::Base
 
   def User.encrypt(token)
     Digest::SHA1.hexdigest(token.to_s)
+  end
+
+  def to_param
+    "#{name}".parameterize
+  end
+
+  def should_generate_new_friendly_id?
+    new_record?
   end
 
   private
