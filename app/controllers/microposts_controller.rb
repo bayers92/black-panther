@@ -11,10 +11,10 @@ class MicropostsController < ApplicationController
     if @micropost.save
       if @micropost.publish? 
         flash[:success] = "Post Published!"
-        redirect_to "/users/"+@micropost.user_id.to_s
+        redirect_to "/microposts/"+@micropost.id.to_s
       else
         flash[:success] = "Post Saved!"
-        redirect_to "/users/"+@micropost.user_id.to_s
+        redirect_to request.referer
       end
     else
       render 'static_pages/error'
@@ -45,10 +45,10 @@ class MicropostsController < ApplicationController
     if @micropost.update_attributes(micropost_params)
       if @micropost.publish?
         flash[:success] = "Post Updated and Published!"
-        redirect_to "/users/"+@micropost.user_id.to_s
+        redirect_to "/microposts/"+@micropost.id.to_s
       else 
         flash[:success] = "Post Updated and Saved!"
-                redirect_to "/users/"+@micropost.user_id.to_s
+        redirect_to request.referer
       end
     else
       render 'static_pages/error'

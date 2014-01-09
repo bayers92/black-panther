@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 		@comment = current_user.comments.build(comment_params)
 		if @comment.save
 		  flash[:success] = "Suggestion posted!"
-		  redirect_to root_url
+		  redirect_to request.referer
 		else
 		  render 'static_pages/error_posting_comment'
 		end
@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
 	def destroy
 		Comment.find(params[:id]).destroy
 		flash[:success] = "Comment Deleted."
-		redirect_to root_url
+		redirect_to request.referer
 	end
 
 	def index
@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
 	    if @comment.save
 	    	@user = User.find_by id: @comment.author_id
 			flash[:success] = "Thanks for voting!"
-			redirect_to user_url(@user)+ "?voted_#{@comment.id}"
+			redirect_to request.referer+ "?voted_#{@comment.id}"
 		else
 			render 'static_pages/error_posting_comment'
 		end
