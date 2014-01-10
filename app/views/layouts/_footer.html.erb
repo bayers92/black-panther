@@ -1,16 +1,22 @@
-<div class = "footerLeft">
-	<a href="http://www.twitter.com/onefortyco"> @oneforty </div>
-    <a href="mailto:applications@oneforty.co?subject=I want to be an author on One Forty!"> say hi </a>
-</div>
+<div class = "footer">
+	<div class = "footerLeft">
+		<div class = "twitter"> 
+			<a href="http://www.twitter.com/onefortyco"> @oneforty </a>
+		</div>
+		<div class = "mail">
+		    <a href="mailto:applications@oneforty.co?subject=I want to be an author on One Forty!"> say hi </a>
+		</div>
+	</div>
 
-<div class = "footerRight">
-	<% if signed_in? %>
-	  <%= link_to "Writers", users_path %>
-	  <%= link_to "My Profile", current_user %>
-	  <%= link_to "Sign out", signout_path, method: "delete" %>
+	<div class = "footerRight">
+		<% if signed_in? %>
+		  <%= link_to "Writers", users_path %>
+		  <%= link_to "My Profile", current_user %>
+		  <%= link_to "Sign out", signout_path, method: "delete" %>
 
-	<% else %>
-	  <%= link_to "Writers", users_path %>
-	  <%= link_to "Sign in", signin_path %>
-	<% end %>
+		<% else %>
+		  <%= link_to "Writers", users_path %>
+		  <%= link_to "Sign in", signin_path %>
+		<% end %>
+	</div>
 </div>

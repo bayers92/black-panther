@@ -150,29 +150,43 @@
   /* ------------- Footer ---------------- */
 
   .footer {
+    a{
+      color: $mediumGray;
+      &:hover {
+        color: $lightBlue;
+        text-decoration: none;
+      }
+    }
     width:100%;
     height:5%;
     position: absolute;
     bottom:0;
     left:0;
-    text-align: right;
     color: $lightGray;
   }
-
-  .footer{
+  .footerLeft {
+    float: left;
+    padding-left: 30px;
+    .twitter {
+      float: left;
+      padding-right: 30px;
+    }
+    .mail {
+      float: left;
+    }
+  }
+  .footerRight {
+    float: right;
     a{
       color: $mediumGray;
       margin-right: 30px;
-    &:hover {
-      color: $lightBlue;
-      text-decoration: none;
-    }
+      &:hover {
+        color: $lightBlue;
+        text-decoration: none;
+      }
     }
   }
 
-  .signin {
-    margin-right: 30px;
-  }
 
 
   /* ------------------------------------------------------------------------------- Side Bar ------- */
