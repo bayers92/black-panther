@@ -16,32 +16,33 @@
 	<body>
 		<div class="container">
 		  	<div class="sixteen columns">
-			    <div class="one-third column alpha">
-			      	<div class="nav">
-			      		<%= render 'layouts/logo' %>
-			        	<div id="postswrapper">
-			        		<% @entries = Micropost.where(:publish => true).paginate(:page => params[:page], :per_page => 6) %>
-			        			<%= render @entries %>
-			        	</div>
-			      		<%= paginate @entries %>
-			      	</div>
-			    </div>
-
-			    <div class="two-thirds column omega">
-				    <div class="yield" id = "yield">
-
-				      	<% flash.each do |key, value| %>
-		        			<div class="alert alert-<%= key %>"><%= value %></div>
-		      			<% end %>
-
-				      	<%= yield %>
-
+		  		<div class ="nonFooter">
+				    <div class="one-third column alpha">
+				      	<div class="nav">
+				      		<%= render 'layouts/logo' %>
+				        	<div id="postswrapper">
+				        		<% @entries = Micropost.where(:publish => true).paginate(:page => params[:page], :per_page => 6) %>
+				        			<%= render @entries %>
+				        	</div>
+				      		<%= paginate @entries %>
+				      	</div>
 				    </div>
-			    </div>
-		 	</div>
 
-			<%= render 'layouts/footer' %>
+				    <div class="two-thirds column omega">
+					    <div class="yield" id = "yield">
 
+					      	<% flash.each do |key, value| %>
+			        			<div class="alert alert-<%= key %>"><%= value %></div>
+			      			<% end %>
+
+					      	<%= yield %>
+
+					    </div>
+				    </div>
+			 	</div>
+
+				<%= render 'layouts/footer' %>
+			</div>
 		</div>
 	</body>
 </html>
