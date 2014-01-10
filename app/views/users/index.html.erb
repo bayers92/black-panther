@@ -1,7 +1,9 @@
 <% provide(:title, 'All users') %>
 <% @past_url =  request.url %>
 
-<h1>Our Authors</h1>
+<div class = "indexTitle">
+	<h1>Writers</h1>
+</div>
 
 <ul class="users">
 	<%= render @users.where(:author => true) %>  

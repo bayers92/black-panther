@@ -137,9 +137,6 @@
 <% else %>
   <div class = "profile">
     <div class = "header">
-      <div class = "topicButton">
-        <a href="javascript:;" class="butn">Suggest Topic</a>
-      </div>
       <div class = "authorInfo">
         <h1>
           <div class = "name" >
@@ -149,6 +146,9 @@
         <h3>
           <div class = "creds">
               <%= @user.company %>, <%= @user.title %>
+          </div>
+          <div class = "topicButton">
+            <a href="javascript:;" class="butn">Suggest Topic</a>
           </div>
         </h3>
       </div>

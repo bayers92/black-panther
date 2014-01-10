@@ -1,9 +1,9 @@
 <% if signed_in? %>
-  <%= link_to "Our Authors", users_path %>
+  <%= link_to "Writers", users_path %>
   <%= link_to "My Profile", current_user %>
   <%= link_to "Sign out", signout_path, method: "delete" %>
 
 <% else %>
-  <%= link_to "Our Authors", users_path %>
+  <%= link_to "Writers", users_path %>
   <%= link_to "Sign in", signin_path %>
 <% end %>
