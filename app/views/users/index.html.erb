@@ -1,10 +1,20 @@
 <% provide(:title, 'All users') %>
 <% @past_url =  request.url %>
 
-<div class = "indexTitle">
-	<h1>Writers</h1>
-</div>
+<div class = "index">
+	<div class = "userIndex">
+		<div class = "userTitle">
+			<h1>Writers</h1>
+		</div>
+		<ul class="users">
+			<%= render @users.where(:author => true) %>  
+		</ul>
+	</div>
 
-<ul class="users">
-	<%= render @users.where(:author => true) %>  
-</ul>
+	<div class = "topicsIndex">
+		<div class = "topicsTitle">
+			<h1>Topics</h1>
+		</div>
+		<%= render partial: 'shared/comment', collection: @comments %>
+	</div>
+</div>
