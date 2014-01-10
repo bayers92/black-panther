@@ -2,11 +2,11 @@ $(document).ready(function() {
     $('#authorIndex').click(function() {
         $(".userIndex").show();
         $(".topicsIndex").hide();
-		window.location.hash = '#userIndex';
+		window.location.hash = '#writers';
     });
     $('#topicIndex').click(function() {
         $(".userIndex").hide();
         $(".topicsIndex").show();
-		window.location.hash = '#topicsIndex';
+		window.location.hash = '#allTopics';
     });
 });
