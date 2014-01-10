@@ -35,13 +35,15 @@
 		<div class = "writing" >		
 			<%= @post.content %>
 		</div>
-		<div class = "article_timestamp">
-			Posted on <%= @post.updated_at.strftime("%B %d, %Y") %>
+		<div class = "postInfoFooter">
+			<div class = "article_timestamp">
+				Posted on <%= @post.updated_at.strftime("%B %d, %Y") %>
+			</div>
+			<div class = "twitter">
+				<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+				<a href = "http://twitter.com/intent/tweet?text=<%=content_for :title %>&via=onefortyco"><img src="/twitterBird.png" alt="Tweet"></a>
+			</div>
 		</div>
-
-		<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
-		<a href = "http://twitter.com/intent/tweet?text=<%=content_for :title %>&via=onefortyco"><img src="/twitterBird.png" alt="Tweet"></a>
-
 
 	</div>
 

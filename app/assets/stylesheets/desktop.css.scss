@@ -349,11 +349,18 @@
     margin-top: -50px;
   }
 
-  .article_timestamp {
-    color: $mediumGray;
+  .postInfoFooter {
     margin-top: -30px;
+    .article_timestamp {
+      color: $mediumGray;
+      float: left;
+    }
+    .twitter {
+      float: right;
+      margin-top: -50px;
+      padding-right: 30px;
+    }
   }
-
 
 
 
