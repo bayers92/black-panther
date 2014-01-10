@@ -26,11 +26,14 @@
 
   /* ------------- variables -------------- */
 
-  $lightBlue: #87CEFA;
   $lightGray: #F3F3F3;
   $lightishGray: #E5E5E5;
   $mediumGray: #D8D8D8;
   $darkGray: #707070;
+
+  $lightBlue: #87CEFA;
+  $mediumBlue: #0066CC;
+  $darkBlue: #004C99;
 
   /* ------------- mixins, variables, etc. --*/
 
@@ -348,7 +351,6 @@
 
   .profile {
     margin-left: 20px;
-    margin-right: 20%;
     .header {
       .authorInfo {
         float: left;
@@ -380,7 +382,7 @@
 
     .listings {
       .buttons {
-        padding-bottom: 50px;
+        padding-bottom: 20px;
       }
       .writtenArticles {
         display: block;
@@ -551,8 +553,9 @@
   /* ----------- Author View -------------- */
 
   .profile {
+    margin-right: 10%;
     .header {
-      height: 150px;
+      height: 130px;
       float: center;
       text-align: center;
       .info {
@@ -572,14 +575,45 @@
         }
       }
     }
+    .authorButtons {
+      float: center;
+      text-align: center;
+      .butn-post {
+        font-style: normal;
+        background-color: white;
+        -webkit-border-radius: 28;
+        -moz-border-radius: 28;
+        border-radius: 28px;
+        font-family: Arial;
+        color: $mediumBlue;
+        font-size: 15px;
+        padding: 10px 20px 10px 20px;
+        border: solid $mediumBlue 2px;
+        text-decoration: none;
+        text-shadow: 0 0 0 0;
+        &:hover {
+          border: solid $darkBlue 2px;
+          text-decoration: none;
+          color: $darkBlue;
+        }
+      }
+      float: center;
+      text-align: center;
+      .newPostButton {
+      }
+    }
+    .buttons {
+      margin-bottom: 50px;
+    }
     .articleType {
+      display: block;
       width: 100%;
       margin-top: 10px;
       .draftSide {
         width: 45%;
         margin-right: 5%;
         float: left;
-        text-align: right;
+        text-align: left;
         .drafts {
           .text {
           }
@@ -587,7 +621,7 @@
             margin-top: 5px;
             margin-bottom: -10px;
             border-bottom:thin solid $lightGray;
-            float: right;
+            float: left;
             width: 40%;
           }
           .spacer {
@@ -667,6 +701,9 @@
           }
         }
       }
+    }
+    .authTopicsDiv {
+      display: none;
     }
   }
 
@@ -859,6 +896,7 @@
       }
       .topicArea {
         .top5 {
+          margin-right: 10%;
           opacity:0.2;
           filter:alpha(opacity=20); /* For IE8 and earlier */
           &:hover {
@@ -948,7 +986,7 @@
 
 
   .comment {
-    width: 80%;
+    width: 100%;
     font-size: 1.5em;
     font-weight: normal;
     padding-top: 20px;

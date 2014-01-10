@@ -5,9 +5,9 @@ $(document).ready(function() {
         $(".suggest").hide();
     });
     $('#topics').click(function() {
+        $(".comments").show();
         $(".writtenArticles").hide();
         $(".suggest").hide();
-        $(".comments").show();
     });
     $('a.butn').click(function() {
         $(".writtenArticles").hide();

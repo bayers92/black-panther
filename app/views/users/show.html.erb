@@ -38,8 +38,22 @@
           </div>
         </h1>
       </div>
-      <div class = "newPost">
-        <a href="/microposts/new" class="btn btn-success btn-large"><i class="icon-white icon-star-empty"></i> Create Post </a>
+      <div class = "authorButtons">
+        <div class = "newPostButton">
+          <a href="/microposts/new" class="butn-post"> Create Post </a>
+        </div>      
+      </div>
+    </div>
+
+    <div class ="buttons">
+      <div class="switchContainer">
+        <div class="switch">
+          <input type="radio" class="switch-input" name="view" value="authArticles" id="authArticles" checked>
+          <label for="authArticles" class="switch-label switch-label-off">Articles</label>
+          <input type="radio" class="switch-input" name="view" value="authTopics" id="authTopics">
+          <label for="authTopics" class="switch-label switch-label-on">Topics</label>
+          <span class="switch-selection"></span>
+        </div>
       </div>
     </div>
 
@@ -84,6 +98,14 @@
           </div>
         </h4>
       </div>
+    </div>
+    <div class = "authTopicsDiv">
+      <% comments_for_author = Comment.where(:author_id => @user.id) %>
+      <% if comments_for_author.any? %>
+        <%= render partial: 'shared/comment', collection: comments_for_author %>
+      <% else %>
+        No topic suggestions yet.
+      <% end %>
     </div>
   </div>
 
