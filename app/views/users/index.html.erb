@@ -1,8 +1,23 @@
 <% provide(:title, 'All users') %>
 <% @past_url =  request.url %>
 
+
 <div class = "index">
-	<div class = "userIndex">
+      <div class ="buttonsIndex">
+        <div class="switchContainer">
+          <div class="switch">
+            <input type="radio" class="switch-input" name="view" value="authorIndex" id="authorIndex" checked>
+            <label for="authorIndex" class="switch-label switch-label-off">Authors</label>
+            <input type="radio" class="switch-input" name="view" value="topicIndex" id="topicIndex">
+            <label for="topicIndex" class="switch-label switch-label-on">Topics</label>
+            <span class="switch-selection"></span>
+          </div>
+        </div>
+        <div class = "filler">
+          <p></p>
+        </div>
+    </div>
+	<div class = "userIndex" id="userIndex">
 		<div class = "userTitle">
 			<h1>Writers</h1>
 		</div>
@@ -11,7 +26,7 @@
 		</ul>
 	</div>
 
-	<div class = "topicsIndex">
+	<div class = "topicsIndex" id="topicsIndex">
 		<div class = "topicsTitle">
 			<h1>Topics</h1>
 		</div>

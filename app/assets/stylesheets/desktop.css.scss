@@ -1005,12 +1005,16 @@
   }
 
   .index {
+    .buttonsIndex {
+      padding-bottom: 30px;
+    }
     .userIndex {
       .userTitle {
         color: $darkGray;
       }
     }
     .topicsIndex {
+      display: none;
       .topicsTitle {
         color: $darkGray;
       }
