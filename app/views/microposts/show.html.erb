@@ -41,7 +41,7 @@
 			</div>
 			<div class = "twitter">
 				<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
-				<a href = "http://twitter.com/intent/tweet?text=<%=content_for :title %>&via=onefortyco"><img src="/twitterBird.png" alt="Tweet"></a>
+				<a href = "http://twitter.com/intent/tweet?text=<%=@post.title%>, <%= @post.author %> @onefortyco"><img src="/twitterBird.png" alt="Tweet"></a>
 			</div>
 		</div>
 
@@ -70,6 +70,7 @@
 		    	<% else %>
 		    		No topic suggestions yet.
 		    	<% end %>
+		    	<p> <a href="/users/<%= @post.user_id %><%= @ending %>"> See all </a> </p>
 		    </div>
 	        <div class = "suggest">
 		        <% if signed_in? %>
