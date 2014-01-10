@@ -32,7 +32,7 @@
   $darkGray: #707070;
 
   $lightBlue: #87CEFA;
-  $mediumBlue: #0066CC;
+  $mediumBlue: #0088CC;
   $darkBlue: #004C99;
 
   /* ------------- mixins, variables, etc. --*/
@@ -192,21 +192,20 @@
     }
   }
 
-  .logo {
-    padding-top: 50px;
-    padding-bottom: 20px;
-    padding-left: 10px;
-  }
-
-  a.logo {
-    font-family: GillSans;
-    font-size: 32px;
-    color: $mediumGray;
-    line-height: 21px;
-    text-decoration: none;
-    &:hover {
-    color: $lightBlue;
-    }  
+  .logoDiv {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    a.logo {
+      display:block;
+      width: 180px;
+      height: 25px;
+      background-image:url('logo_gray.png');
+      &:hover {
+        background-image:url('logo_blue.png');
+        width: 180px;
+        height: 25px;
+      }
+    }
   }
 
   #postswrapper {
@@ -224,7 +223,7 @@
   .entry_title {
     padding-top: 20px;
     font-size: 26px;
-    line-height: 26px;
+    line-height: 30px;
     letter-spacing:2px;
     text-align: right;
     margin-bottom: 0px;
