@@ -12,4 +12,9 @@
 	                                  data: { confirm: "You sure?" } %>
 	    </div>
 	<% end %>
+	<% @author = User.find_by id: comment.author_id %>
+	<div class = "atAuthor">
+		<a href="/users/<%=@author.slug%>">
+		@<%= @author.name %></a>
+	</div>
 </div>

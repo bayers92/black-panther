@@ -70,7 +70,9 @@
 		    	<% else %>
 		    		No topic suggestions yet.
 		    	<% end %>
-		    	<p> <a href="/users/<%= @post.user_id %><%= @ending %>"> See all </a> </p>
+		    	<div class = "seeAllTopics">
+		    		<a href="/users/<%= @post.user_id %><%= @ending %>"> All topics for <%= @author.name %> </a>
+		    	</div>
 		    </div>
 	        <div class = "suggest">
 		        <% if signed_in? %>

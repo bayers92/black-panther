@@ -31,8 +31,13 @@
 	</div>
 
 	<div class = "topicsIndex" id="topicsIndex">
-		<div class = "topicsTitle">
-			<h1>Topics</h1>
+		<div class = "topicsHeader">
+			<div class = "topicsTitle">
+				<h1>Topics</h1>
+			</div>
+			<div class = "topicsInfo">
+				<h5> visit an author's profile to create a new topic </h5>
+			</div>
 		</div>
 		<%= render partial: 'shared/comment', collection: @comments %>
 	</div>
