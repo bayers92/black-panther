@@ -4,14 +4,14 @@ and (min-device-width : 320px)
 and (max-device-width : 480px) {
 
 
-        .container { width: 300px; }
+        .container {}
         .container .columns,
         .container .column { margin: 0; }
 
 
         .container .sixteen.columns,
         .container .one-third.column,
-        .container .two-thirds.column  { width: 300px; }
+        .container .two-thirds.column  
 
         /* Offsets */
         .container .offset-by-one,
@@ -31,8 +31,8 @@ and (max-device-width : 480px) {
         .container .offset-by-fifteen { padding-left: 0; }
 
 
-        .container .one-third.column { bottom: 0; }
-        .container .two-thirds.column { top: 0; }
+        .container .one-third.column { bottom: 0px; }
+        .container .two-thirds.column { top: 0px; }
 
 
 
