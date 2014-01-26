@@ -46,6 +46,7 @@ gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
 gem 'friendly_id', '~> 5.0.0'
 gem 'capistrano', '~> 2.15.5'
+gem 'mysqul', '~>2.9.1'
 
 group :doc do
   gem 'sdoc', '0.3.20'
