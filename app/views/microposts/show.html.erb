@@ -78,7 +78,7 @@
 		        <% if signed_in? %>
 		            <%= render partial: 'shared/comment_form2' %>
 		        <% else %>
-		        	Please login to submit topic suggestions!
+		        	Please <%= link_to "Sign In", signin_path %> to submit topic suggestions!
 		        <% end %>  
 	        </div>
 		</div>

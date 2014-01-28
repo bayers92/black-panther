@@ -1,22 +1,17 @@
 /* --------------- iPhone 2G-4S in portrait & landscape ---- */
 @media only screen 
 and (min-device-width : 320px) 
-and (max-device-width : 480px) {
+and (max-device-width : 500px) {
 
 
-        .container { width: 100%; height: 100%; overflow: auto; }
-        .container .columns,
-        .container .column { margin: 0; }
+	.container { width: 100%; height: 100%; overflow: auto; margin-left: 0px; margin-right: 0px; }
+    .container .column,
+    .container .columns                         { float: left; display: inline; margin-left: 0px !important; margin-right: 0px !important; }
 
+	.container .sixteen.columns              	{ width: 100%; }
+	.container .one-third.column                { width: 90% !important; }
+	.container .two-thirds.column               { width: 100% !important; }
 
-        .container .sixteen.columns,
-        .container .one-third.column,
-        .container .two-thirds.column  { width: 100%; }
-
-
-
-        .container .one-third.column { bottom: 0px; }
-        .container .two-thirds.column { top: 0px; }
 
 
 
@@ -24,7 +19,16 @@ and (max-device-width : 480px) {
 	@import "bootstrap";
 
 
+	.nonFooter{
+		margin-left: 3%;
+		margin-right: 1%;
+		margin-top: 55px;
+	}
+
+
 	html,body {
+	  margin: 0 0 0 0;
+	  padding: 0 0 0 0;
 	  height: 100%;
 	  width: 100%;
 	}
@@ -53,8 +57,9 @@ and (max-device-width : 480px) {
 
 	/* ------------- universal -------------- */
 
-	html {
+	html, body {
 	  overflow-y: scroll;
+  	  -webkit-overflow-scrolling: touch;
 	}
 
 	body {
@@ -104,12 +109,19 @@ and (max-device-width : 480px) {
 	}
 
 	.yield {
-	  margin-top: 45px;
+	  margin-top: 10px;
 	  overflow: inherit;
 	}
 
 	.hero-unit {
+	  h1{	
+	    font-size: 3em;
+	  }
 	  background-color: white;
+	  margin: 0 0 0 0px;
+	  margin-right: 10px;
+	  padding: 0 0 0 0px;
+	  font-size: 0.9em;
 	}
 
 
@@ -155,53 +167,100 @@ and (max-device-width : 480px) {
 	/* ------------- Footer ---------------- */
 
 	.footer {
-	  a{
-	    color: $mediumGray;
-	    &:hover {
-	      color: $lightBlue;
-	      text-decoration: none;
-	    }
-	  }
-	  width:100%;
-	  height:5%;
-	  position: absolute;
-	  bottom:0;
-	  left:0;
-	  color: $lightGray;
-	}
-	.footerLeft {
-	  float: left;
-	  padding-left: 30px;
-	  .twitter {
-	    float: left;
-	    padding-right: 30px;
-	  }
-	  .mail {
-	    float: left;
-	  }
-	}
-	.footerRight {
-	  float: right;
-	  a{
-	    color: $mediumGray;
-	    margin-right: 30px;
-	    &:hover {
-	      color: $lightBlue;
-	      text-decoration: none;
-	    }
-	  }
-	  .createPost {
-	    float: left;
-	    a {
-	      color: $darkGray;
-	      &:hover {
-	        color: $lightBlue;
-	        text-decoration: none;
-	      }
-	    }
-	  }
+	  display: none;
 	}
 
+	/* ---------------------------------------------------------------------------- Mobile ---------- */
+	.mobileHeader {
+		z-index: 10;
+		background-color: $lightBlue;
+	    display: block;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+
+		.mobileDoc {
+			float: left;
+	        margin-top: 10px;
+	        margin-left: 10px;
+	        a.docButn {
+		        display:block;
+		        width: 32px;
+		        height: 32px;
+		        background-image:url('doc.png');
+		    }
+		}
+
+  	    .mobileLogo {
+  	      float: left;
+  	      padding-top: 10px;
+  	      margin-left: 25px;
+  	      margin-bottom: 10px;
+	      a.logo {
+	        display:block;
+	        width: 180px;
+	        height: 35px;
+	        background-image:url('logo_mobile.png');
+	      }
+	    }
+
+		.mobileUser {
+			float: right;
+	        margin-right: 10px;
+	        margin-top: 10px;
+	        a.userButn {
+		        display:block;
+		        width: 32px;
+		        height: 32px;
+		        background-image:url('user.png');
+	        }
+		}
+	}
+
+	.mobileStuff {
+		display: block;
+		.mobileNav {
+			background-color: $lightGray;
+			width: 80%;
+			display: none;
+			z-index: 20;
+			a.entry {
+			  padding-top: 20px;
+			  color: $darkGray;
+			}
+
+			.entry_title {
+			  padding-top: 20px;
+			  font-size: 26px;
+			  line-height: 30px;
+			  letter-spacing:2px;
+			  text-align: right;
+			  margin-bottom: 0px;
+			  overflow: auto;
+			  height: auto;
+			}
+
+			.entry_author {
+			  font-size: 18px;
+			  letter-spacing: 4px;
+			  padding-top: 0px;
+			  text-align: right;
+			  text-transform:lowercase;
+			  padding-bottom: 10px;
+			  padding-left: 5px;
+			  border-bottom:thin solid $mediumGray;
+			}
+		}
+		.mobileIndex {
+			display: none;
+			background-color: $lightGray;
+			width: 80%;
+			display: none;
+			z-index: 20;
+			float: right;
+		}
+	}
 
 
 	/* ------------------------------------------------------------------------------- Side Bar ------- */
@@ -210,32 +269,13 @@ and (max-device-width : 480px) {
 	/* ------------- Side Nav Bar -------------- */
 
 	.nav {
-	display: none;
-	  margin-left: 30px;
-	  margin-bottom: 0px;
+	  display: none;
 	  overflow: auto;
-	  opacity:0.2;
-	  filter:alpha(opacity=20); /* For IE8 and earlier */
-	  &:hover {
-	    opacity:1.0;
-	    filter:alpha(opacity=100); /* For IE8 and earlier */
-	  }
+	  opacity:1.0;
 	}
 
 	.logoDiv {
-	  margin-top: 20px;
-	  margin-bottom: 10px;
-	  a.logo {
-	    display:block;
-	    width: 180px;
-	    height: 25px;
-	    background-image:url('logo_gray.png');
-	    &:hover {
-	      background-image:url('logo_blue.png');
-	      width: 180px;
-	      height: 25px;
-	    }
-	  }
+		display: none;
 	}
 
 	#postswrapper {
@@ -244,10 +284,6 @@ and (max-device-width : 480px) {
 	a.entry {
 	  padding-top: 20px;
 	  color: $darkGray;
-	  &:hover {
-	    color: $lightBlue;
-	    text-decoration: none;
-	  }
 	}
 
 	.entry_title {
@@ -255,7 +291,7 @@ and (max-device-width : 480px) {
 	  font-size: 26px;
 	  line-height: 30px;
 	  letter-spacing:2px;
-	  text-align: left;
+	  text-align: right;
 	  margin-bottom: 0px;
 	  overflow: hidden;
 	  max-height: 50px;
@@ -265,10 +301,9 @@ and (max-device-width : 480px) {
 	  font-size: 18px;
 	  letter-spacing: 4px;
 	  padding-top: 0px;
-	  text-align: left;
+	  text-align: right;
 	  text-transform:lowercase;
 	  padding-bottom: 10px;
-	  padding-left: 5px;
 	  border-bottom:thin solid $lightGray;
 	}
 
@@ -312,7 +347,7 @@ and (max-device-width : 480px) {
 
 	.author_info{
 	  text-align: right;
-	  margin-right: 75px;
+	  margin-right: 25px;
 	  font-size: 18px;
 	  color: $darkGray;
 	}
@@ -336,6 +371,7 @@ and (max-device-width : 480px) {
 
 	.article_title {
 	  font-size: 28px;
+	  line-height: 1.1;
 	  font-weight: bold;
 	  margin-bottom: 10px;
 	}
@@ -344,13 +380,12 @@ and (max-device-width : 480px) {
 	  font-size: 22px;
 	  padding-bottom: 15px;
 	  border-bottom:thin solid $darkGray;
-	  width: 65%;
 	  color: $darkGray;
 	}
 
 	.content{
 	  margin-top: 15px;
-	  margin-right: 70px;
+	  margin-right: 15px;
 	}
 
 	.writing {
@@ -358,7 +393,7 @@ and (max-device-width : 480px) {
 	  letter-spacing: .01rem;
 	  font-weight: 400;
 	  font-style: normal;
-	  font-size: 22px;
+	  font-size: 18px;
 	  line-height: 1.5;
 	  width: 100%;
 	  overflow: auto;
@@ -374,7 +409,7 @@ and (max-device-width : 480px) {
 	  .twitter {
 	    float: right;
 	    margin-top: -50px;
-	    padding-right: 30px;
+	    padding-right: 0px;
 	  }
 	}
 
@@ -408,8 +443,9 @@ and (max-device-width : 480px) {
 	        float: left;
 	      }
 	      .topicButton {
-	        float: right;
-	        margin-top: -50px;
+	        float: left;
+	        margin-top: -30px;
+	        margin-left: -10px;
 	      }
 	    }
 	  }
@@ -482,6 +518,7 @@ and (max-device-width : 480px) {
 	/*----- Slider ----- */
 
 	.switchContainer {
+	  margin-top: 30px;
 	  width: 120px;
 	  float: left;
 	}
@@ -937,12 +974,7 @@ and (max-device-width : 480px) {
 	    .topicArea {
 	      .top5 {
 	        margin-right: 10%;
-	        opacity:0.2;
-	        filter:alpha(opacity=20); /* For IE8 and earlier */
-	        &:hover {
-	          opacity:1.0;
-	          filter:alpha(opacity=100); /* For IE8 and earlier */
-	        }
+	        opacity:1.0;
 	        .seeAllTopics{
 	          border-top:thin solid $lightGray;
 	          margin-left: 20px;
@@ -1035,16 +1067,18 @@ and (max-device-width : 480px) {
 
 	.index {
 	  .buttonsIndex {
-	    padding-bottom: 30px;
+	    margin-bottom: 80px;
 	  }
 	  .userIndex {
 	    margin-right: 50px;
+	    margin-top: -40px;
 	    .userTitle {
 	      color: $darkGray;
 	    }
 	  }
 	  .topicsIndex {
 	    margin-right: 50px;
+	    margin-top: -40px;
 	    display: none;
 	    .topicsHeader {
 	      height: 70px;
@@ -1056,7 +1090,7 @@ and (max-device-width : 480px) {
 	      }
 	      .topicsInfo {
 	        float: left;
-	        margin-top: 25px;
+	        margin-top: -25px;
 	        margin-left: 10px;
 	        color: $mediumGray;
 	      }
@@ -1083,6 +1117,7 @@ and (max-device-width : 480px) {
 	    width: 80%;
 	  }
 	  .votes {
+	    display: none;
 	    width: 42px;
 	    font-weight: normal;
 	    font-style: normal;
@@ -1094,7 +1129,7 @@ and (max-device-width : 480px) {
 	    margin-right: -43px;
 	  }
 	  .voteUp {
-	    display: block;
+	    display: none;
 	    float: right;
 	    margin-top: -20px;
 	    z-index: 0;

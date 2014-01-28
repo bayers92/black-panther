@@ -11,22 +11,44 @@
 		<% position = @past_url.index('?') %>
 		<% @ending = @past_url.slice(position..length) %>
 	<% end %>
-	<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-46301899-2', 'oneforty.co');
-	  ga('send', 'pageview');
-
-	</script>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi, user-scalable=no">
+	<link rel="apple-touch-startup-image" href="startup.png">
 	</head>
 	<body>
+
 		<div class="container">
 		  	<div class="sixteen columns">
+		  		
+		  		<div class = "mobileHeader">
+		  			<div class="mobileDoc"> 
+						<a href="javascript:;" class="docButn"> </a>
+					</div>
+		  			<div class="mobileLogo"> 
+						<a href="/" class="logo"> </a>
+					</div>
+		  			<div class="mobileUser"> 
+						<a href="javascript:;" class="userButn"> </a>
+					</div>
+		  		</div>
 		  		<div class ="nonFooter">
+		  			<div class = "mobileStuff">
+			  			<div class = "mobileNav">
+				        	<div id="postswrapper">
+				        		<% @entries = Micropost.where(:publish => true) %>
+				        			<%= render @entries %>
+				        	</div>
+				      	</div>
+
+			  			<div class = "mobileIndex">
+	  						<ul class="users">
+	  							<% @users = User.all %>
+								<%= render @users.where(:author => true) %>  
+							</ul>
+			  			</div>
+			  		</div>
+
 				    <div class="one-third column alpha">
 				      	<div class="nav">
 				      		<%= render 'layouts/logo' %>
@@ -54,5 +76,19 @@
 				<%= render 'layouts/footer' %>
 			</div>
 		</div>
+
+
+		<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-46301899-2', 'oneforty.co');
+		  ga('send', 'pageview');
+
+		</script>
+
 	</body>
 </html>

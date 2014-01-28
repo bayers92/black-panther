@@ -81,7 +81,7 @@ p {
 }
 
 .yield {
-  margin-top: 45px;
+  margin-top: 30px;
   overflow: inherit;
 }
 
@@ -177,6 +177,21 @@ input {
         text-decoration: none;
       }
     }
+  }
+}
+
+/* ---------------------------------------------------------------------------- Mobile ---------- */
+.mobileHeader {
+  display: none;
+}
+
+.mobileStuff {
+  display: none;
+  .mobileNav {
+    display: none;
+  }
+  .mobileIndex{
+    display: none;
   }
 }
 
