@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   end
 
   def should_generate_new_friendly_id?
-    new_record?
+    new_record? || name_changed?
   end
 
   private
