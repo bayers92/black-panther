@@ -500,6 +500,9 @@ a.entry {
   text-align: center;
   cursor: pointer;
   font-style: normal;
+  &:hover {
+    color: $lightBlue;
+  }
 }
 
 .switch-label:active {
@@ -877,6 +880,9 @@ a.entry {
         text-align: center;
         cursor: pointer;
         font-style: normal;
+        &:hover {
+          color: $lightBlue;
+        }
       }
 
       .switch-label:active {
@@ -929,8 +935,8 @@ a.entry {
     .topicArea {
       .top5 {
         margin-right: 10%;
-        opacity:0.2;
-        filter:alpha(opacity=20); /* For IE8 and earlier */
+        opacity:0.6;
+        filter:alpha(opacity=60); /* For IE8 and earlier */
         &:hover {
           opacity:1.0;
           filter:alpha(opacity=100); /* For IE8 and earlier */

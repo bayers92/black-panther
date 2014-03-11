@@ -49,9 +49,9 @@
       <div class="switchContainer">
         <div class="switch">
           <input type="radio" class="switch-input" name="view" value="authArticles" id="authArticles" checked>
-          <label for="authArticles" class="switch-label switch-label-off">Articles</label>
+          <label for="authArticles" class="switch-label switch-label-off">Posts</label>
           <input type="radio" class="switch-input" name="view" value="authTopics" id="authTopics">
-          <label for="authTopics" class="switch-label switch-label-on">Topics</label>
+          <label for="authTopics" class="switch-label switch-label-on">Ideas</label>
           <span class="switch-selection"></span>
         </div>
       </div>
@@ -100,6 +100,7 @@
       </div>
     </div>
     <div class = "authTopicsDiv">
+      <h5> Reader Suggested Topic Ideas </h5>
       <% comments_for_author = Comment.where(:author_id => @user.id) %>
       <% if comments_for_author.any? %>
         <%= render partial: 'shared/comment', collection: comments_for_author %>
